@@ -1,18 +1,19 @@
 import { RandomAgent, RuleBasedAgent } from "./agent.js";
 import { createSeededRandom } from "./random.js";
 import { renderWorld } from "./render.js";
+import { createScenario, type ScenarioName } from "./scenarios.js";
 import { runSimulation } from "./simulation.js";
-import { createInitialWorld } from "./world.js";
 
 const stepLimit = 12;
-const initialWorld = createInitialWorld();
+const scenarioName: ScenarioName = "easy";
+const initialWorld = createScenario(scenarioName);
 const randomSimulation = runSimulation(
-  createInitialWorld(),
+  createScenario(scenarioName),
   new RandomAgent(createSeededRandom(2026)),
   stepLimit,
 );
 const ruleBasedSimulation = runSimulation(
-  createInitialWorld(),
+  createScenario(scenarioName),
   new RuleBasedAgent(initialWorld.deliveryTarget),
   stepLimit,
 );
@@ -27,6 +28,7 @@ function printSummary(name: string, simulation: ReturnType<typeof runSimulation>
   console.log(`Actions: ${simulation.steps.map((step) => step.action).join(", ")}`);
 }
 
+console.log(`Scenario: ${scenarioName}`);
 console.log("Initial world:");
 console.log(renderWorld(initialWorld));
 printSummary("RandomAgent", randomSimulation);
