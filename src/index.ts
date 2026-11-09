@@ -11,6 +11,8 @@ const simulation = runSimulation(initialWorld, agent, 12);
 console.log("Initial world:");
 console.log(renderWorld(initialWorld));
 console.log(`\nAutonomous actions: ${simulation.steps.map((step) => step.action).join(", ")}`);
+console.log(`Mission outcome: ${simulation.termination}`);
+console.log(`Steps taken: ${simulation.stepsTaken}`);
 console.log(`Successful moves: ${simulation.successfulMoves}`);
 console.log(`Rejected moves: ${simulation.rejectedMoves}`);
 console.log(`Final position: (${simulation.world.robot.x}, ${simulation.world.robot.y})`);
