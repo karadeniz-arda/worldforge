@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import type { Agent } from "../src/agent.js";
+import { RuleBasedAgent, type Agent } from "../src/agent.js";
 import type { MovementDirection } from "../src/movement.js";
 import { runSimulation } from "../src/simulation.js";
 import type { World } from "../src/world.js";
@@ -119,5 +119,26 @@ describe("runSimulation", () => {
     expect(world.robot).toEqual({ x: 0, y: 0 });
     expect(world.obstacles[0]).toBe(originalObstacle);
     expect(world.deliveryTarget).toBe(originalTarget);
+  });
+
+  it("can loop when its local greedy fallback cannot get around an unseen wall", () => {
+    const world: World = {
+      width: 3,
+      height: 3,
+      robot: { x: 0, y: 1 },
+      obstacles: [{ x: 1, y: 0 }, { x: 1, y: 1 }, { x: 1, y: 2 }],
+      deliveryTarget: { x: 2, y: 1 },
+    };
+
+    const result = runSimulation(world, new RuleBasedAgent(world.deliveryTarget), 4);
+
+    expect(result.termination).toBe("step-limit");
+    expect(result.world.robot).toEqual({ x: 0, y: 1 });
+    expect(result.steps).toEqual([
+      { action: "down", succeeded: true },
+      { action: "up", succeeded: true },
+      { action: "down", succeeded: true },
+      { action: "up", succeeded: true },
+    ]);
   });
 });
