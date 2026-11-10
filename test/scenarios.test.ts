@@ -10,6 +10,9 @@ describe("scenario library", () => {
       corridor: ["R####", "....#", "###.#", "#....", "####T"],
       detour: ["R.#.T", "..#..", "..#..", ".....", "....."],
       unreachable: ["R#T", "###", "..."],
+      deadEnd: ["###########", "#R.......##", "#.#######.#", "#.........#", "#########T#"],
+      loops: ["#########", "#R......#", "#.#####.#", "#.#...#T#", "#.#.#.#.#", "#...#...#", "#########"],
+      returnRoute: ["#########", "#R.....##", "#.#####T#", "#.......#", "#########"],
     });
   });
 
@@ -31,5 +34,13 @@ describe("scenario library", () => {
 
   it("renders parsed worlds at their own dimensions", () => {
     expect(renderWorld(createScenario("unreachable"))).toBe("R#T\n###\n...");
+  });
+
+  it.each(["deadEnd", "loops", "returnRoute"] as const)("parses the valid %s adversarial scenario", (name) => {
+    const world = createScenario(name);
+
+    expect(world.width).toBe(scenarioRows[name][0].length);
+    expect(world.height).toBe(scenarioRows[name].length);
+    expect(renderWorld(world)).toBe(scenarioRows[name].join("\n"));
   });
 });

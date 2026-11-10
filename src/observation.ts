@@ -1,4 +1,5 @@
 import type { MovementDirection } from "./movement.js";
+import { hasObstacle, positionsMatch } from "./grid.js";
 import type { Position, World } from "./world.js";
 
 export type NeighborContents = "empty" | "obstacle" | "target" | "boundary";
@@ -16,16 +17,12 @@ const directionOffsets: Record<MovementDirection, Position> = {
   right: { x: 1, y: 0 },
 };
 
-function positionsMatch(first: Position, second: Position): boolean {
-  return first.x === second.x && first.y === second.y;
-}
-
 function describeCell(world: World, position: Position): NeighborContents {
   if (position.x < 0 || position.x >= world.width || position.y < 0 || position.y >= world.height) {
     return "boundary";
   }
 
-  if (world.obstacles.some((obstacle) => positionsMatch(obstacle, position))) {
+  if (hasObstacle(world.obstacles, position)) {
     return "obstacle";
   }
 

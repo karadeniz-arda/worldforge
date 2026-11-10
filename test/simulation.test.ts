@@ -39,11 +39,18 @@ describe("runSimulation", () => {
       rejectedMoves: 2,
       stepsTaken: 4,
       termination: "step-limit",
+      movementAnalytics: {
+        uniqueCellsVisited: 2,
+        repeatedVisits: 1,
+        immediateBacktracks: 1,
+        repeatedVisitsPerSuccessfulMove: 0.5,
+        immediateBacktracksPerSuccessfulMove: 0.5,
+      },
       steps: [
-        { action: "right", succeeded: true },
-        { action: "down", succeeded: false, reason: "obstacle" },
-        { action: "left", succeeded: true },
-        { action: "up", succeeded: false, reason: "out-of-bounds" },
+        { action: "right", succeeded: true, positionBefore: { x: 0, y: 0 }, positionAfter: { x: 1, y: 0 } },
+        { action: "down", succeeded: false, reason: "obstacle", positionBefore: { x: 1, y: 0 }, positionAfter: { x: 1, y: 0 } },
+        { action: "left", succeeded: true, positionBefore: { x: 1, y: 0 }, positionAfter: { x: 0, y: 0 } },
+        { action: "up", succeeded: false, reason: "out-of-bounds", positionBefore: { x: 0, y: 0 }, positionAfter: { x: 0, y: 0 } },
       ],
     });
   });
@@ -53,8 +60,8 @@ describe("runSimulation", () => {
 
     expect(result.world.robot).toEqual({ x: 0, y: 0 });
     expect(result.steps).toEqual([
-      { action: "up", succeeded: false, reason: "out-of-bounds" },
-      { action: "left", succeeded: false, reason: "out-of-bounds" },
+      { action: "up", succeeded: false, reason: "out-of-bounds", positionBefore: { x: 0, y: 0 }, positionAfter: { x: 0, y: 0 } },
+      { action: "left", succeeded: false, reason: "out-of-bounds", positionBefore: { x: 0, y: 0 }, positionAfter: { x: 0, y: 0 } },
     ]);
   });
 
@@ -94,6 +101,13 @@ describe("runSimulation", () => {
       rejectedMoves: 0,
       stepsTaken: 0,
       termination: "goal-reached",
+      movementAnalytics: {
+        uniqueCellsVisited: 1,
+        repeatedVisits: 0,
+        immediateBacktracks: 0,
+        repeatedVisitsPerSuccessfulMove: null,
+        immediateBacktracksPerSuccessfulMove: null,
+      },
     });
     expect(agent.decisions).toBe(0);
   });
@@ -135,10 +149,17 @@ describe("runSimulation", () => {
     expect(result.termination).toBe("step-limit");
     expect(result.world.robot).toEqual({ x: 0, y: 1 });
     expect(result.steps).toEqual([
-      { action: "down", succeeded: true },
-      { action: "up", succeeded: true },
-      { action: "down", succeeded: true },
-      { action: "up", succeeded: true },
+      { action: "down", succeeded: true, positionBefore: { x: 0, y: 1 }, positionAfter: { x: 0, y: 2 } },
+      { action: "up", succeeded: true, positionBefore: { x: 0, y: 2 }, positionAfter: { x: 0, y: 1 } },
+      { action: "down", succeeded: true, positionBefore: { x: 0, y: 1 }, positionAfter: { x: 0, y: 2 } },
+      { action: "up", succeeded: true, positionBefore: { x: 0, y: 2 }, positionAfter: { x: 0, y: 1 } },
     ]);
+    expect(result.movementAnalytics).toEqual({
+      uniqueCellsVisited: 2,
+      repeatedVisits: 3,
+      immediateBacktracks: 3,
+      repeatedVisitsPerSuccessfulMove: 0.75,
+      immediateBacktracksPerSuccessfulMove: 0.75,
+    });
   });
 });

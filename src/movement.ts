@@ -1,3 +1,4 @@
+import { hasObstacle } from "./grid.js";
 import type { Position, World } from "./world.js";
 
 /** The four single-cell actions available to the robot. */
@@ -15,10 +16,6 @@ const directionOffsets: Record<MovementDirection, Position> = {
   left: { x: -1, y: 0 },
   right: { x: 1, y: 0 },
 };
-
-function positionsMatch(first: Position, second: Position): boolean {
-  return first.x === second.x && first.y === second.y;
-}
 
 function isWithinWorld(world: World, position: Position): boolean {
   return position.x >= 0
@@ -42,7 +39,7 @@ export function moveRobot(world: World, direction: MovementDirection): MoveResul
     return { world, succeeded: false, reason: "out-of-bounds" };
   }
 
-  if (world.obstacles.some((obstacle) => positionsMatch(obstacle, nextRobotPosition))) {
+  if (hasObstacle(world.obstacles, nextRobotPosition)) {
     return { world, succeeded: false, reason: "obstacle" };
   }
 

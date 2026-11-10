@@ -27,6 +27,65 @@ export class RandomAgent implements Agent {
 }
 
 /**
+ * A random policy that avoids moves already known to be invalid from its local
+ * observation. With no observed-safe neighbor, it deterministically returns
+ * "up" so the existing movement engine records the rejected action.
+ */
+export class ValidRandomAgent implements Agent {
+  constructor(private readonly random: () => number = Math.random) {}
+
+  decide(observation: Observation): MovementDirection {
+    const validDirections = directions.filter((direction) => {
+      const contents = observation.neighbors[direction];
+      return contents !== "obstacle" && contents !== "boundary";
+    });
+
+    if (validDirections.length === 0) {
+      return "up";
+    }
+
+    return validDirections[Math.floor(this.random() * validDirections.length)]!;
+  }
+}
+
+/**
+ * A random local policy that remembers observed positions and prefers safe
+ * adjacent cells it has not seen before. It has no map or pathfinding state.
+ */
+export class MemoryRandomAgent implements Agent {
+  private readonly visitedPositions = new Set<string>();
+
+  constructor(private readonly random: () => number = Math.random) {}
+
+  decide(observation: Observation): MovementDirection {
+    this.visitedPositions.add(positionKey(observation.robot));
+    const validDirections = directions.filter((direction) => {
+      const contents = observation.neighbors[direction];
+      return contents === "empty" || contents === "target";
+    });
+
+    if (validDirections.length === 0) {
+      return "up";
+    }
+
+    const unvisitedDirections = validDirections.filter((direction) => {
+      const offset = directionOffsets[direction];
+      return !this.visitedPositions.has(positionKey({
+        x: observation.robot.x + offset.x,
+        y: observation.robot.y + offset.y,
+      }));
+    });
+    const choices = unvisitedDirections.length > 0 ? unvisitedDirections : validDirections;
+
+    return choices[Math.floor(this.random() * choices.length)]!;
+  }
+}
+
+function positionKey(position: Position): string {
+  return `${position.x},${position.y}`;
+}
+
+/**
  * A local greedy policy. It knows the public target coordinate, but sees only
  * the supplied observation; it can get stuck or loop around unseen layouts.
  */

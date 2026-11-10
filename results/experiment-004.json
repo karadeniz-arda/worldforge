@@ -1,0 +1,8214 @@
+{
+  "configuration": {
+    "maps": [
+      {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      }
+    ],
+    "worldSeeds": [
+      30000,
+      30001,
+      30002,
+      30003,
+      30004,
+      30005,
+      30006,
+      30007,
+      30008,
+      30009,
+      30010,
+      30011,
+      30012,
+      30013,
+      30014,
+      30015,
+      30016,
+      30017,
+      30018,
+      30019,
+      30020,
+      30021,
+      30022,
+      30023,
+      30024,
+      30025,
+      30026,
+      30027,
+      30028,
+      30029,
+      30030,
+      30031,
+      30032,
+      30033,
+      30034,
+      30035,
+      30036,
+      30037,
+      30038,
+      30039,
+      30040,
+      30041,
+      30042,
+      30043,
+      30044,
+      30045,
+      30046,
+      30047,
+      30048,
+      30049,
+      30050,
+      30051,
+      30052,
+      30053,
+      30054,
+      30055,
+      30056,
+      30057,
+      30058,
+      30059,
+      30060,
+      30061,
+      30062,
+      30063,
+      30064,
+      30065,
+      30066,
+      30067,
+      30068,
+      30069,
+      30070,
+      30071,
+      30072,
+      30073,
+      30074,
+      30075,
+      30076,
+      30077,
+      30078,
+      30079,
+      30080,
+      30081,
+      30082,
+      30083,
+      30084,
+      30085,
+      30086,
+      30087,
+      30088,
+      30089,
+      30090,
+      30091,
+      30092,
+      30093,
+      30094,
+      30095,
+      30096,
+      30097,
+      30098,
+      30099
+    ],
+    "actionBudgets": [
+      100,
+      500,
+      1000
+    ],
+    "agentTrialsPerWorld": 10,
+    "maxGenerationAttempts": 1000
+  },
+  "generatedMaps": [
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30000,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30001,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30002,
+      "attempts": 3,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30003,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30004,
+      "attempts": 1,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30005,
+      "attempts": 5,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30006,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30007,
+      "attempts": 1,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30008,
+      "attempts": 2,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30009,
+      "attempts": 3,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30010,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30011,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30012,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30013,
+      "attempts": 2,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30014,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30015,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30016,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30017,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30018,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30019,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30020,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30021,
+      "attempts": 1,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30022,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30023,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30024,
+      "attempts": 4,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30025,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30026,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30027,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30028,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30029,
+      "attempts": 2,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30030,
+      "attempts": 2,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30031,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30032,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30033,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30034,
+      "attempts": 4,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30035,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30036,
+      "attempts": 2,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30037,
+      "attempts": 3,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30038,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30039,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30040,
+      "attempts": 2,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30041,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30042,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30043,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30044,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30045,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30046,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30047,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30048,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30049,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30050,
+      "attempts": 2,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30051,
+      "attempts": 2,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30052,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30053,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30054,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30055,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30056,
+      "attempts": 3,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30057,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30058,
+      "attempts": 1,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30059,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30060,
+      "attempts": 4,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30061,
+      "attempts": 3,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30062,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30063,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30064,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30065,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30066,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30067,
+      "attempts": 1,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30068,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30069,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30070,
+      "attempts": 2,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30071,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30072,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30073,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30074,
+      "attempts": 4,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30075,
+      "attempts": 3,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30076,
+      "attempts": 3,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30077,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30078,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30079,
+      "attempts": 2,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30080,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30081,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30082,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30083,
+      "attempts": 5,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30084,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30085,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30086,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30087,
+      "attempts": 1,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30088,
+      "attempts": 3,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30089,
+      "attempts": 3,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30090,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30091,
+      "attempts": 4,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30092,
+      "attempts": 4,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30093,
+      "attempts": 8,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30094,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30095,
+      "attempts": 4,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30096,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30097,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30098,
+      "attempts": 2,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30099,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30000,
+      "attempts": 2,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30001,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30002,
+      "attempts": 3,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30003,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30004,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30005,
+      "attempts": 1,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30006,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30007,
+      "attempts": 1,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30008,
+      "attempts": 2,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30009,
+      "attempts": 3,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30010,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30011,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30012,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30013,
+      "attempts": 2,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30014,
+      "attempts": 2,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30015,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30016,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30017,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30018,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30019,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30020,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30021,
+      "attempts": 1,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30022,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30023,
+      "attempts": 1,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30024,
+      "attempts": 4,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30025,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30026,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30027,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30028,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30029,
+      "attempts": 2,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30030,
+      "attempts": 3,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30031,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30032,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30033,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30034,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30035,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30036,
+      "attempts": 2,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30037,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30038,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30039,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30040,
+      "attempts": 2,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30041,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30042,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30043,
+      "attempts": 1,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30044,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30045,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30046,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30047,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30048,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30049,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30050,
+      "attempts": 2,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30051,
+      "attempts": 3,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30052,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30053,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30054,
+      "attempts": 3,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30055,
+      "attempts": 1,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30056,
+      "attempts": 3,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30057,
+      "attempts": 2,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30058,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30059,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30060,
+      "attempts": 4,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30061,
+      "attempts": 3,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30062,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30063,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30064,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30065,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30066,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30067,
+      "attempts": 2,
+      "shortestPathLength": 11
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30068,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30069,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30070,
+      "attempts": 2,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30071,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30072,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30073,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30074,
+      "attempts": 4,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30075,
+      "attempts": 3,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30076,
+      "attempts": 3,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30077,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30078,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30079,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30080,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30081,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30082,
+      "attempts": 1,
+      "shortestPathLength": 8
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30083,
+      "attempts": 3,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30084,
+      "attempts": 2,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30085,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30086,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30087,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30088,
+      "attempts": 4,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30089,
+      "attempts": 3,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30090,
+      "attempts": 1,
+      "shortestPathLength": 9
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30091,
+      "attempts": 4,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30092,
+      "attempts": 5,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30093,
+      "attempts": 8,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30094,
+      "attempts": 1,
+      "shortestPathLength": 6
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30095,
+      "attempts": 2,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30096,
+      "attempts": 1,
+      "shortestPathLength": 10
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30097,
+      "attempts": 1,
+      "shortestPathLength": 12
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30098,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "worldSeed": 30099,
+      "attempts": 1,
+      "shortestPathLength": 7
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30000,
+      "attempts": 3,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30001,
+      "attempts": 1,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30002,
+      "attempts": 2,
+      "shortestPathLength": 24
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30003,
+      "attempts": 3,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30004,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30005,
+      "attempts": 1,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30006,
+      "attempts": 5,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30007,
+      "attempts": 1,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30008,
+      "attempts": 3,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30009,
+      "attempts": 6,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30010,
+      "attempts": 2,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30011,
+      "attempts": 3,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30012,
+      "attempts": 2,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30013,
+      "attempts": 4,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30014,
+      "attempts": 3,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30015,
+      "attempts": 1,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30016,
+      "attempts": 1,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30017,
+      "attempts": 2,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30018,
+      "attempts": 4,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30019,
+      "attempts": 2,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30020,
+      "attempts": 1,
+      "shortestPathLength": 26
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30021,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30022,
+      "attempts": 3,
+      "shortestPathLength": 24
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30023,
+      "attempts": 2,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30024,
+      "attempts": 2,
+      "shortestPathLength": 30
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30025,
+      "attempts": 2,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30026,
+      "attempts": 2,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30027,
+      "attempts": 4,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30028,
+      "attempts": 4,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30029,
+      "attempts": 1,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30030,
+      "attempts": 2,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30031,
+      "attempts": 2,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30032,
+      "attempts": 2,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30033,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30034,
+      "attempts": 2,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30035,
+      "attempts": 1,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30036,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30037,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30038,
+      "attempts": 2,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30039,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30040,
+      "attempts": 3,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30041,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30042,
+      "attempts": 1,
+      "shortestPathLength": 29
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30043,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30044,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30045,
+      "attempts": 1,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30046,
+      "attempts": 4,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30047,
+      "attempts": 3,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30048,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30049,
+      "attempts": 6,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30050,
+      "attempts": 3,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30051,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30052,
+      "attempts": 1,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30053,
+      "attempts": 3,
+      "shortestPathLength": 29
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30054,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30055,
+      "attempts": 3,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30056,
+      "attempts": 3,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30057,
+      "attempts": 2,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30058,
+      "attempts": 1,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30059,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30060,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30061,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30062,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30063,
+      "attempts": 4,
+      "shortestPathLength": 27
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30064,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30065,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30066,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30067,
+      "attempts": 1,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30068,
+      "attempts": 4,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30069,
+      "attempts": 1,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30070,
+      "attempts": 5,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30071,
+      "attempts": 1,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30072,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30073,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30074,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30075,
+      "attempts": 1,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30076,
+      "attempts": 2,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30077,
+      "attempts": 2,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30078,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30079,
+      "attempts": 2,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30080,
+      "attempts": 4,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30081,
+      "attempts": 2,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30082,
+      "attempts": 2,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30083,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30084,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30085,
+      "attempts": 1,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30086,
+      "attempts": 5,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30087,
+      "attempts": 2,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30088,
+      "attempts": 1,
+      "shortestPathLength": 29
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30089,
+      "attempts": 3,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30090,
+      "attempts": 1,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30091,
+      "attempts": 2,
+      "shortestPathLength": 28
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30092,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30093,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30094,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30095,
+      "attempts": 3,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30096,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30097,
+      "attempts": 3,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30098,
+      "attempts": 2,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30099,
+      "attempts": 1,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30000,
+      "attempts": 3,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30001,
+      "attempts": 1,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30002,
+      "attempts": 2,
+      "shortestPathLength": 26
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30003,
+      "attempts": 2,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30004,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30005,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30006,
+      "attempts": 3,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30007,
+      "attempts": 1,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30008,
+      "attempts": 3,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30009,
+      "attempts": 5,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30010,
+      "attempts": 2,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30011,
+      "attempts": 3,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30012,
+      "attempts": 2,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30013,
+      "attempts": 4,
+      "shortestPathLength": 26
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30014,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30015,
+      "attempts": 1,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30016,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30017,
+      "attempts": 2,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30018,
+      "attempts": 2,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30019,
+      "attempts": 2,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30020,
+      "attempts": 1,
+      "shortestPathLength": 26
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30021,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30022,
+      "attempts": 2,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30023,
+      "attempts": 2,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30024,
+      "attempts": 2,
+      "shortestPathLength": 32
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30025,
+      "attempts": 2,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30026,
+      "attempts": 2,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30027,
+      "attempts": 4,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30028,
+      "attempts": 4,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30029,
+      "attempts": 1,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30030,
+      "attempts": 2,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30031,
+      "attempts": 2,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30032,
+      "attempts": 5,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30033,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30034,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30035,
+      "attempts": 1,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30036,
+      "attempts": 2,
+      "shortestPathLength": 30
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30037,
+      "attempts": 2,
+      "shortestPathLength": 32
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30038,
+      "attempts": 2,
+      "shortestPathLength": 28
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30039,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30040,
+      "attempts": 3,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30041,
+      "attempts": 1,
+      "shortestPathLength": 27
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30042,
+      "attempts": 2,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30043,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30044,
+      "attempts": 1,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30045,
+      "attempts": 1,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30046,
+      "attempts": 4,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30047,
+      "attempts": 3,
+      "shortestPathLength": 20
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30048,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30049,
+      "attempts": 4,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30050,
+      "attempts": 3,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30051,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30052,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30053,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30054,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30055,
+      "attempts": 3,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30056,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30057,
+      "attempts": 2,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30058,
+      "attempts": 1,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30059,
+      "attempts": 1,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30060,
+      "attempts": 1,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30061,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30062,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30063,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30064,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30065,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30066,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30067,
+      "attempts": 1,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30068,
+      "attempts": 4,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30069,
+      "attempts": 1,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30070,
+      "attempts": 2,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30071,
+      "attempts": 1,
+      "shortestPathLength": 21
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30072,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30073,
+      "attempts": 1,
+      "shortestPathLength": 18
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30074,
+      "attempts": 1,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30075,
+      "attempts": 1,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30076,
+      "attempts": 2,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30077,
+      "attempts": 2,
+      "shortestPathLength": 28
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30078,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30079,
+      "attempts": 2,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30080,
+      "attempts": 2,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30081,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30082,
+      "attempts": 5,
+      "shortestPathLength": 17
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30083,
+      "attempts": 2,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30084,
+      "attempts": 1,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30085,
+      "attempts": 1,
+      "shortestPathLength": 25
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30086,
+      "attempts": 4,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30087,
+      "attempts": 2,
+      "shortestPathLength": 23
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30088,
+      "attempts": 1,
+      "shortestPathLength": 29
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30089,
+      "attempts": 3,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30090,
+      "attempts": 1,
+      "shortestPathLength": 45
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30091,
+      "attempts": 2,
+      "shortestPathLength": 32
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30092,
+      "attempts": 1,
+      "shortestPathLength": 15
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30093,
+      "attempts": 1,
+      "shortestPathLength": 13
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30094,
+      "attempts": 2,
+      "shortestPathLength": 14
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30095,
+      "attempts": 2,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30096,
+      "attempts": 1,
+      "shortestPathLength": 26
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30097,
+      "attempts": 3,
+      "shortestPathLength": 22
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30098,
+      "attempts": 1,
+      "shortestPathLength": 16
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "worldSeed": 30099,
+      "attempts": 1,
+      "shortestPathLength": 19
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30000,
+      "attempts": 1,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30001,
+      "attempts": 2,
+      "shortestPathLength": 36
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30002,
+      "attempts": 3,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30003,
+      "attempts": 2,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30004,
+      "attempts": 1,
+      "shortestPathLength": 35
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30005,
+      "attempts": 6,
+      "shortestPathLength": 35
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30006,
+      "attempts": 2,
+      "shortestPathLength": 47
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30007,
+      "attempts": 1,
+      "shortestPathLength": 62
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30008,
+      "attempts": 1,
+      "shortestPathLength": 61
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30009,
+      "attempts": 2,
+      "shortestPathLength": 39
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30010,
+      "attempts": 2,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30011,
+      "attempts": 1,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30012,
+      "attempts": 1,
+      "shortestPathLength": 54
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30013,
+      "attempts": 1,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30014,
+      "attempts": 1,
+      "shortestPathLength": 58
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30015,
+      "attempts": 6,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30016,
+      "attempts": 1,
+      "shortestPathLength": 58
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30017,
+      "attempts": 3,
+      "shortestPathLength": 43
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30018,
+      "attempts": 2,
+      "shortestPathLength": 39
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30019,
+      "attempts": 1,
+      "shortestPathLength": 42
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30020,
+      "attempts": 1,
+      "shortestPathLength": 33
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30021,
+      "attempts": 1,
+      "shortestPathLength": 39
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30022,
+      "attempts": 1,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30023,
+      "attempts": 1,
+      "shortestPathLength": 68
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30024,
+      "attempts": 1,
+      "shortestPathLength": 45
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30025,
+      "attempts": 1,
+      "shortestPathLength": 71
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30026,
+      "attempts": 3,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30027,
+      "attempts": 5,
+      "shortestPathLength": 33
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30028,
+      "attempts": 1,
+      "shortestPathLength": 44
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30029,
+      "attempts": 2,
+      "shortestPathLength": 44
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30030,
+      "attempts": 1,
+      "shortestPathLength": 49
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30031,
+      "attempts": 5,
+      "shortestPathLength": 33
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30032,
+      "attempts": 1,
+      "shortestPathLength": 47
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30033,
+      "attempts": 2,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30034,
+      "attempts": 7,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30035,
+      "attempts": 1,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30036,
+      "attempts": 1,
+      "shortestPathLength": 33
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30037,
+      "attempts": 1,
+      "shortestPathLength": 42
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30038,
+      "attempts": 1,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30039,
+      "attempts": 3,
+      "shortestPathLength": 54
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30040,
+      "attempts": 1,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30041,
+      "attempts": 2,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30042,
+      "attempts": 2,
+      "shortestPathLength": 53
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30043,
+      "attempts": 3,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30044,
+      "attempts": 1,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30045,
+      "attempts": 2,
+      "shortestPathLength": 59
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30046,
+      "attempts": 1,
+      "shortestPathLength": 48
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30047,
+      "attempts": 1,
+      "shortestPathLength": 36
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30048,
+      "attempts": 1,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30049,
+      "attempts": 1,
+      "shortestPathLength": 61
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30050,
+      "attempts": 3,
+      "shortestPathLength": 68
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30051,
+      "attempts": 1,
+      "shortestPathLength": 44
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30052,
+      "attempts": 4,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30053,
+      "attempts": 1,
+      "shortestPathLength": 55
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30054,
+      "attempts": 5,
+      "shortestPathLength": 33
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30055,
+      "attempts": 2,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30056,
+      "attempts": 1,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30057,
+      "attempts": 3,
+      "shortestPathLength": 53
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30058,
+      "attempts": 1,
+      "shortestPathLength": 35
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30059,
+      "attempts": 1,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30060,
+      "attempts": 5,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30061,
+      "attempts": 1,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30062,
+      "attempts": 2,
+      "shortestPathLength": 35
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30063,
+      "attempts": 2,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30064,
+      "attempts": 1,
+      "shortestPathLength": 45
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30065,
+      "attempts": 1,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30066,
+      "attempts": 1,
+      "shortestPathLength": 63
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30067,
+      "attempts": 5,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30068,
+      "attempts": 1,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30069,
+      "attempts": 4,
+      "shortestPathLength": 78
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30070,
+      "attempts": 2,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30071,
+      "attempts": 1,
+      "shortestPathLength": 39
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30072,
+      "attempts": 1,
+      "shortestPathLength": 61
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30073,
+      "attempts": 1,
+      "shortestPathLength": 36
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30074,
+      "attempts": 1,
+      "shortestPathLength": 41
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30075,
+      "attempts": 5,
+      "shortestPathLength": 45
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30076,
+      "attempts": 1,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30077,
+      "attempts": 3,
+      "shortestPathLength": 55
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30078,
+      "attempts": 3,
+      "shortestPathLength": 47
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30079,
+      "attempts": 3,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30080,
+      "attempts": 1,
+      "shortestPathLength": 55
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30081,
+      "attempts": 4,
+      "shortestPathLength": 75
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30082,
+      "attempts": 1,
+      "shortestPathLength": 42
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30083,
+      "attempts": 1,
+      "shortestPathLength": 68
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30084,
+      "attempts": 1,
+      "shortestPathLength": 33
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30085,
+      "attempts": 1,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30086,
+      "attempts": 1,
+      "shortestPathLength": 47
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30087,
+      "attempts": 1,
+      "shortestPathLength": 74
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30088,
+      "attempts": 2,
+      "shortestPathLength": 64
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30089,
+      "attempts": 6,
+      "shortestPathLength": 36
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30090,
+      "attempts": 2,
+      "shortestPathLength": 60
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30091,
+      "attempts": 4,
+      "shortestPathLength": 59
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30092,
+      "attempts": 1,
+      "shortestPathLength": 65
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30093,
+      "attempts": 1,
+      "shortestPathLength": 39
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30094,
+      "attempts": 1,
+      "shortestPathLength": 43
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30095,
+      "attempts": 2,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30096,
+      "attempts": 2,
+      "shortestPathLength": 61
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30097,
+      "attempts": 2,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30098,
+      "attempts": 1,
+      "shortestPathLength": 57
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30099,
+      "attempts": 1,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30000,
+      "attempts": 1,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30001,
+      "attempts": 2,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30002,
+      "attempts": 3,
+      "shortestPathLength": 68
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30003,
+      "attempts": 2,
+      "shortestPathLength": 54
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30004,
+      "attempts": 1,
+      "shortestPathLength": 39
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30005,
+      "attempts": 6,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30006,
+      "attempts": 2,
+      "shortestPathLength": 53
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30007,
+      "attempts": 1,
+      "shortestPathLength": 62
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30008,
+      "attempts": 1,
+      "shortestPathLength": 63
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30009,
+      "attempts": 2,
+      "shortestPathLength": 45
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30010,
+      "attempts": 2,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30011,
+      "attempts": 1,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30012,
+      "attempts": 1,
+      "shortestPathLength": 54
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30013,
+      "attempts": 1,
+      "shortestPathLength": 53
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30014,
+      "attempts": 1,
+      "shortestPathLength": 60
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30015,
+      "attempts": 6,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30016,
+      "attempts": 1,
+      "shortestPathLength": 58
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30017,
+      "attempts": 1,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30018,
+      "attempts": 2,
+      "shortestPathLength": 41
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30019,
+      "attempts": 1,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30020,
+      "attempts": 1,
+      "shortestPathLength": 35
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30021,
+      "attempts": 1,
+      "shortestPathLength": 41
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30022,
+      "attempts": 1,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30023,
+      "attempts": 1,
+      "shortestPathLength": 68
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30024,
+      "attempts": 1,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30025,
+      "attempts": 1,
+      "shortestPathLength": 73
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30026,
+      "attempts": 3,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30027,
+      "attempts": 1,
+      "shortestPathLength": 36
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30028,
+      "attempts": 1,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30029,
+      "attempts": 2,
+      "shortestPathLength": 48
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30030,
+      "attempts": 1,
+      "shortestPathLength": 49
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30031,
+      "attempts": 5,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30032,
+      "attempts": 1,
+      "shortestPathLength": 49
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30033,
+      "attempts": 2,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30034,
+      "attempts": 7,
+      "shortestPathLength": 58
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30035,
+      "attempts": 1,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30036,
+      "attempts": 1,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30037,
+      "attempts": 1,
+      "shortestPathLength": 44
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30038,
+      "attempts": 1,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30039,
+      "attempts": 1,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30040,
+      "attempts": 1,
+      "shortestPathLength": 55
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30041,
+      "attempts": 2,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30042,
+      "attempts": 2,
+      "shortestPathLength": 53
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30043,
+      "attempts": 2,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30044,
+      "attempts": 1,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30045,
+      "attempts": 1,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30046,
+      "attempts": 1,
+      "shortestPathLength": 48
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30047,
+      "attempts": 1,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30048,
+      "attempts": 1,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30049,
+      "attempts": 1,
+      "shortestPathLength": 61
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30050,
+      "attempts": 5,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30051,
+      "attempts": 1,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30052,
+      "attempts": 4,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30053,
+      "attempts": 1,
+      "shortestPathLength": 55
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30054,
+      "attempts": 4,
+      "shortestPathLength": 33
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30055,
+      "attempts": 2,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30056,
+      "attempts": 1,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30057,
+      "attempts": 3,
+      "shortestPathLength": 53
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30058,
+      "attempts": 1,
+      "shortestPathLength": 35
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30059,
+      "attempts": 1,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30060,
+      "attempts": 5,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30061,
+      "attempts": 1,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30062,
+      "attempts": 2,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30063,
+      "attempts": 2,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30064,
+      "attempts": 1,
+      "shortestPathLength": 45
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30065,
+      "attempts": 1,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30066,
+      "attempts": 1,
+      "shortestPathLength": 67
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30067,
+      "attempts": 3,
+      "shortestPathLength": 35
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30068,
+      "attempts": 1,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30069,
+      "attempts": 1,
+      "shortestPathLength": 46
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30070,
+      "attempts": 2,
+      "shortestPathLength": 54
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30071,
+      "attempts": 1,
+      "shortestPathLength": 41
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30072,
+      "attempts": 1,
+      "shortestPathLength": 69
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30073,
+      "attempts": 1,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30074,
+      "attempts": 1,
+      "shortestPathLength": 41
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30075,
+      "attempts": 5,
+      "shortestPathLength": 45
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30076,
+      "attempts": 1,
+      "shortestPathLength": 51
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30077,
+      "attempts": 1,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30078,
+      "attempts": 3,
+      "shortestPathLength": 47
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30079,
+      "attempts": 3,
+      "shortestPathLength": 40
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30080,
+      "attempts": 1,
+      "shortestPathLength": 63
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30081,
+      "attempts": 4,
+      "shortestPathLength": 75
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30082,
+      "attempts": 1,
+      "shortestPathLength": 50
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30083,
+      "attempts": 1,
+      "shortestPathLength": 68
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30084,
+      "attempts": 1,
+      "shortestPathLength": 37
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30085,
+      "attempts": 1,
+      "shortestPathLength": 52
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30086,
+      "attempts": 1,
+      "shortestPathLength": 47
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30087,
+      "attempts": 1,
+      "shortestPathLength": 78
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30088,
+      "attempts": 2,
+      "shortestPathLength": 64
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30089,
+      "attempts": 6,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30090,
+      "attempts": 2,
+      "shortestPathLength": 60
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30091,
+      "attempts": 3,
+      "shortestPathLength": 34
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30092,
+      "attempts": 1,
+      "shortestPathLength": 65
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30093,
+      "attempts": 1,
+      "shortestPathLength": 41
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30094,
+      "attempts": 1,
+      "shortestPathLength": 61
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30095,
+      "attempts": 2,
+      "shortestPathLength": 56
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30096,
+      "attempts": 2,
+      "shortestPathLength": 63
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30097,
+      "attempts": 2,
+      "shortestPathLength": 38
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30098,
+      "attempts": 1,
+      "shortestPathLength": 57
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "worldSeed": 30099,
+      "attempts": 1,
+      "shortestPathLength": 54
+    }
+  ],
+  "generationFailures": [],
+  "results": [
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 100,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 190,
+      "successRate": 0.19,
+      "successConfidenceInterval": {
+        "lower": 0.1668892700644027,
+        "upper": 0.2154833201966415
+      },
+      "meanSuccessfulSteps": 57.310526315789474,
+      "meanUniqueCellsVisited": 24.61,
+      "meanRepeatedVisits": 46.628,
+      "meanImmediateBacktracks": 22.593,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6491557903032237,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.32160622542656436,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 7.59738581593845
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 100,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 260,
+      "successRate": 0.26,
+      "successConfidenceInterval": {
+        "lower": 0.23376861850763092,
+        "upper": 0.2880682255654355
+      },
+      "meanSuccessfulSteps": 49.5,
+      "meanUniqueCellsVisited": 27.922,
+      "meanRepeatedVisits": 59.948,
+      "meanImmediateBacktracks": 28.429,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6602342881347391,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3215974610446394,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 6.614930838392378
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 100,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 687,
+      "successRate": 0.687,
+      "successConfidenceInterval": {
+        "lower": 0.6575897312800101,
+        "upper": 0.7149790610463924
+      },
+      "meanSuccessfulSteps": 44.346433770014556,
+      "meanUniqueCellsVisited": 42.473,
+      "meanRepeatedVisits": 20.293,
+      "meanImmediateBacktracks": 7.906,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.2419849912064144,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.09578321140580405,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 5.526361951830743
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 500,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 712,
+      "successRate": 0.712,
+      "successConfidenceInterval": {
+        "lower": 0.6831644885571975,
+        "upper": 0.7392129658449271
+      },
+      "meanSuccessfulSteps": 206.42696629213484,
+      "meanUniqueCellsVisited": 45.551,
+      "meanRepeatedVisits": 179.329,
+      "meanImmediateBacktracks": 72.409,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7337984266975074,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3184741848417592,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 25.802679643692954
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 500,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 798,
+      "successRate": 0.798,
+      "successConfidenceInterval": {
+        "lower": 0.771996830196033,
+        "upper": 0.8217224217465763
+      },
+      "meanSuccessfulSteps": 192.14912280701753,
+      "meanUniqueCellsVisited": 47.224,
+      "meanRepeatedVisits": 208.111,
+      "meanImmediateBacktracks": 82.564,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7327870052217765,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.31787017808650536,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 23.941930411390814
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 500,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 976,
+      "successRate": 0.976,
+      "successConfidenceInterval": {
+        "lower": 0.9645370943883885,
+        "upper": 0.9838198315333629
+      },
+      "meanSuccessfulSteps": 90.89754098360656,
+      "meanUniqueCellsVisited": 47.371,
+      "meanRepeatedVisits": 54.345,
+      "meanImmediateBacktracks": 19.318,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.29547855995901384,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.1111520406736495,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 10.896270069130482
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 1000,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 901,
+      "successRate": 0.901,
+      "successConfidenceInterval": {
+        "lower": 0.8809263810632503,
+        "upper": 0.9180045586313347
+      },
+      "meanSuccessfulSteps": 312.1542730299667,
+      "meanUniqueCellsVisited": 49.006,
+      "meanRepeatedVisits": 245.024,
+      "meanImmediateBacktracks": 94.665,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7433918553187792,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.31775070036592395,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 37.889304596153174
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 1000,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 944,
+      "successRate": 0.944,
+      "successConfidenceInterval": {
+        "lower": 0.927976651850269,
+        "upper": 0.9566251866145581
+      },
+      "meanSuccessfulSteps": 268.28601694915255,
+      "meanUniqueCellsVisited": 48.95,
+      "meanRepeatedVisits": 261.312,
+      "meanImmediateBacktracks": 100.28,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7388122811944419,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.31771888563440015,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 32.616109098265746
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 1000,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 993,
+      "successRate": 0.993,
+      "successConfidenceInterval": {
+        "lower": 0.9856216845342334,
+        "upper": 0.9966051315990092
+      },
+      "meanSuccessfulSteps": 100.39778449144008,
+      "meanUniqueCellsVisited": 47.428,
+      "meanRepeatedVisits": 60.267,
+      "meanImmediateBacktracks": 21.188,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.29649664168943235,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.11138924038145644,
+      "meanShortestPathLength": 8.61,
+      "meanSuccessfulPathEfficiency": 12.050196605847932
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 100,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 151,
+      "successRate": 0.151,
+      "successConfidenceInterval": {
+        "lower": 0.13014612063122316,
+        "upper": 0.17452495679169433
+      },
+      "meanSuccessfulSteps": 59.152317880794705,
+      "meanUniqueCellsVisited": 19.73,
+      "meanRepeatedVisits": 45.268,
+      "meanImmediateBacktracks": 23.029,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6961872301403944,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3614885203314665,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 8.08022538535784
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 100,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 258,
+      "successRate": 0.258,
+      "successConfidenceInterval": {
+        "lower": 0.23184403439388107,
+        "upper": 0.2860081167131276
+      },
+      "meanSuccessfulSteps": 55.406976744186046,
+      "meanUniqueCellsVisited": 24.059,
+      "meanRepeatedVisits": 65.436,
+      "meanImmediateBacktracks": 32.177,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7130672301564708,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.35595005633749527,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 6.801351931875194
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 100,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 635,
+      "successRate": 0.635,
+      "successConfidenceInterval": {
+        "lower": 0.6046972526360328,
+        "upper": 0.6642695225728674
+      },
+      "meanSuccessfulSteps": 43.14015748031496,
+      "meanUniqueCellsVisited": 34.534,
+      "meanRepeatedVisits": 30.36,
+      "meanImmediateBacktracks": 13.846,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.3585353948907975,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.16608848097999115,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 4.881030675361378
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 500,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 619,
+      "successRate": 0.619,
+      "successConfidenceInterval": {
+        "lower": 0.5884995451079357,
+        "upper": 0.6485896863725021
+      },
+      "meanSuccessfulSteps": 214.48788368336025,
+      "meanUniqueCellsVisited": 37.428,
+      "meanRepeatedVisits": 185.886,
+      "meanImmediateBacktracks": 80.511,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7808240529567763,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.35630885855997,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 25.023111357319788
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 500,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 756,
+      "successRate": 0.756,
+      "successConfidenceInterval": {
+        "lower": 0.7284335318206567,
+        "upper": 0.7816071678347392
+      },
+      "meanSuccessfulSteps": 186.5383597883598,
+      "meanUniqueCellsVisited": 39.233,
+      "meanRepeatedVisits": 224.79,
+      "meanImmediateBacktracks": 95.517,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7754273189209218,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3515072979504432,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 21.657397830711297
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 500,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 962,
+      "successRate": 0.962,
+      "successConfidenceInterval": {
+        "lower": 0.9482730796686497,
+        "upper": 0.9721909954906974
+      },
+      "meanSuccessfulSteps": 101.07068607068607,
+      "meanUniqueCellsVisited": 40.114,
+      "meanRepeatedVisits": 77.116,
+      "meanImmediateBacktracks": 32.041,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.40302436594510077,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.17759725403948384,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 11.244801565955402
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 1000,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 815,
+      "successRate": 0.815,
+      "successConfidenceInterval": {
+        "lower": 0.7897439459386497,
+        "upper": 0.8378451962154505
+      },
+      "meanSuccessfulSteps": 329.99386503067484,
+      "meanUniqueCellsVisited": 41.307,
+      "meanRepeatedVisits": 271.73,
+      "meanImmediateBacktracks": 113.364,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.792017358138721,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3556627439944046,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 37.86374064245228
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 1000,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 906,
+      "successRate": 0.906,
+      "successConfidenceInterval": {
+        "lower": 0.8863268456834931,
+        "upper": 0.9225658264262363
+      },
+      "meanSuccessfulSteps": 268.77152317880797,
+      "meanUniqueCellsVisited": 41.343,
+      "meanRepeatedVisits": 297.164,
+      "meanImmediateBacktracks": 122.465,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7809692824274833,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3508045798696073,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 30.455744081157967
+    },
+    {
+      "map": {
+        "width": 10,
+        "height": 10,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 6
+      },
+      "actionBudget": 1000,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 992,
+      "successRate": 0.992,
+      "successConfidenceInterval": {
+        "lower": 0.9842936654690199,
+        "upper": 0.995940804181194
+      },
+      "meanSuccessfulSteps": 118.43951612903226,
+      "meanUniqueCellsVisited": 40.389,
+      "meanRepeatedVisits": 86.103,
+      "meanImmediateBacktracks": 35.473,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.4038859792243536,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.17777644583821603,
+      "meanShortestPathLength": 9.47,
+      "meanSuccessfulPathEfficiency": 13.472518638395636
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 100,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 9,
+      "successRate": 0.009,
+      "successConfidenceInterval": {
+        "lower": 0.004742060667477063,
+        "upper": 0.01701581616533807
+      },
+      "meanSuccessfulSteps": 73.33333333333333,
+      "meanUniqueCellsVisited": 31.5,
+      "meanRepeatedVisits": 50.634,
+      "meanImmediateBacktracks": 24.572,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6259267262951157,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.30546286160617964,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 4.825983584316917
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 100,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 22,
+      "successRate": 0.022,
+      "successConfidenceInterval": {
+        "lower": 0.014572707764791058,
+        "upper": 0.03308567334739963
+      },
+      "meanSuccessfulSteps": 72.9090909090909,
+      "meanUniqueCellsVisited": 36.576,
+      "meanRepeatedVisits": 63.828,
+      "meanImmediateBacktracks": 30.449,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6413329921977323,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.30638096497260764,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 4.821000436761306
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 100,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 153,
+      "successRate": 0.153,
+      "successConfidenceInterval": {
+        "lower": 0.13201921562431126,
+        "upper": 0.17663655476466403
+      },
+      "meanSuccessfulSteps": 60.38562091503268,
+      "meanUniqueCellsVisited": 77.197,
+      "meanRepeatedVisits": 17.742,
+      "meanImmediateBacktracks": 6.809,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.18153246370582457,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.06984315922435623,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 3.608146533494911
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 500,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 157,
+      "successRate": 0.157,
+      "successConfidenceInterval": {
+        "lower": 0.1357693269808853,
+        "upper": 0.18085582934020553
+      },
+      "meanSuccessfulSteps": 298.859872611465,
+      "meanUniqueCellsVisited": 94.249,
+      "meanRepeatedVisits": 288.162,
+      "meanImmediateBacktracks": 116.721,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7477130191843214,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3059035097339507,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 18.566441798250796
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 500,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 223,
+      "successRate": 0.223,
+      "successConfidenceInterval": {
+        "lower": 0.19828813022889644,
+        "upper": 0.24983189397210112
+      },
+      "meanSuccessfulSteps": 272.78923766816143,
+      "meanUniqueCellsVisited": 106.676,
+      "meanRepeatedVisits": 343.656,
+      "meanImmediateBacktracks": 138.048,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7523713028947413,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.30658277297993064,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 16.308274387155514
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 500,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 681,
+      "successRate": 0.681,
+      "successConfidenceInterval": {
+        "lower": 0.6514663972750635,
+        "upper": 0.7091483161531656
+      },
+      "meanSuccessfulSteps": 211.41556534508075,
+      "meanUniqueCellsVisited": 167.18,
+      "meanRepeatedVisits": 137.294,
+      "meanImmediateBacktracks": 47.022,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.3572459837574451,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.12423417604314224,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 12.10157001966505
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 1000,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 334,
+      "successRate": 0.334,
+      "successConfidenceInterval": {
+        "lower": 0.3054523188740042,
+        "upper": 0.36381816494320013
+      },
+      "meanSuccessfulSteps": 542.2964071856287,
+      "meanUniqueCellsVisited": 138.921,
+      "meanRepeatedVisits": 551.728,
+      "meanImmediateBacktracks": 211.35,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7828117359710308,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3061199353324194,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 32.24940307427594
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 1000,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 432,
+      "successRate": 0.432,
+      "successConfidenceInterval": {
+        "lower": 0.40161609445686075,
+        "upper": 0.4629043446971748
+      },
+      "meanSuccessfulSteps": 497.62268518518516,
+      "meanUniqueCellsVisited": 151.051,
+      "meanRepeatedVisits": 632.922,
+      "meanImmediateBacktracks": 240.997,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7837395136315273,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3065971432206235,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 29.02696881516404
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 1000,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 852,
+      "successRate": 0.852,
+      "successConfidenceInterval": {
+        "lower": 0.828644950702635,
+        "upper": 0.8726610113235342
+      },
+      "meanSuccessfulSteps": 307.36502347417843,
+      "meanUniqueCellsVisited": 180.878,
+      "meanRepeatedVisits": 229.997,
+      "meanImmediateBacktracks": 76.379,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.3934433677898505,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.1342969260962827,
+      "meanShortestPathLength": 18.3,
+      "meanSuccessfulPathEfficiency": 17.496979819383863
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 100,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 2,
+      "successRate": 0.002,
+      "successConfidenceInterval": {
+        "lower": 0.000548643588120728,
+        "upper": 0.007262807863492177
+      },
+      "meanSuccessfulSteps": 82,
+      "meanUniqueCellsVisited": 24.151,
+      "meanRepeatedVisits": 48.041,
+      "meanImmediateBacktracks": 24.499,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6783334496505902,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3495044030376032,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 5.8358974358974365
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 100,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 11,
+      "successRate": 0.011,
+      "successConfidenceInterval": {
+        "lower": 0.006153174098086639,
+        "upper": 0.019589395700786272
+      },
+      "meanSuccessfulSteps": 70.54545454545455,
+      "meanUniqueCellsVisited": 30.262,
+      "meanRepeatedVisits": 70.414,
+      "meanImmediateBacktracks": 34.835,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7058519250194585,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.34933387702747776,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 4.760802596096714
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 100,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 157,
+      "successRate": 0.157,
+      "successConfidenceInterval": {
+        "lower": 0.1357693269808853,
+        "upper": 0.18085582934020553
+      },
+      "meanSuccessfulSteps": 58.968152866242036,
+      "meanUniqueCellsVisited": 64.705,
+      "meanRepeatedVisits": 29.853,
+      "meanImmediateBacktracks": 13.485,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.3066212963447576,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.13885377933412496,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 3.414300481552386
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 500,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 122,
+      "successRate": 0.122,
+      "successConfidenceInterval": {
+        "lower": 0.10314874471332984,
+        "upper": 0.14374428470174982
+      },
+      "meanSuccessfulSteps": 307.55737704918033,
+      "meanUniqueCellsVisited": 68.281,
+      "meanRepeatedVisits": 275.889,
+      "meanImmediateBacktracks": 118.704,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7993275210202645,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3472953487157472,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 18.341350042485285
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 500,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 203,
+      "successRate": 0.203,
+      "successConfidenceInterval": {
+        "lower": 0.17922817876013142,
+        "upper": 0.2290449157802884
+      },
+      "meanSuccessfulSteps": 280.99014778325125,
+      "meanUniqueCellsVisited": 82.474,
+      "meanRepeatedVisits": 374.067,
+      "meanImmediateBacktracks": 158.485,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.8109600513998158,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.34756562728281554,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 16.519858795982174
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 500,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 579,
+      "successRate": 0.579,
+      "successConfidenceInterval": {
+        "lower": 0.5481543035657991,
+        "upper": 0.6092410685934831
+      },
+      "meanSuccessfulSteps": 208.12089810017272,
+      "meanUniqueCellsVisited": 133.933,
+      "meanRepeatedVisits": 198.069,
+      "meanImmediateBacktracks": 78.918,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.497833921389897,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.20221698778353145,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 11.290870206537786
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 1000,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 257,
+      "successRate": 0.257,
+      "successConfidenceInterval": {
+        "lower": 0.23088201740604794,
+        "upper": 0.28497778721793177
+      },
+      "meanSuccessfulSteps": 546.3852140077821,
+      "meanUniqueCellsVisited": 102.528,
+      "meanRepeatedVisits": 536.711,
+      "meanImmediateBacktracks": 220.429,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.8285386915395382,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.345792589632034,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 31.902074187163038
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 1000,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 391,
+      "successRate": 0.391,
+      "successConfidenceInterval": {
+        "lower": 0.36122774950463854,
+        "upper": 0.4216064838452125
+      },
+      "meanSuccessfulSteps": 509.98976982097184,
+      "meanUniqueCellsVisited": 116.833,
+      "meanRepeatedVisits": 692.573,
+      "meanImmediateBacktracks": 280.831,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.8367592920817363,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3470534172148855,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 28.53520739912677
+    },
+    {
+      "map": {
+        "width": 20,
+        "height": 20,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 13
+      },
+      "actionBudget": 1000,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 762,
+      "successRate": 0.762,
+      "successConfidenceInterval": {
+        "lower": 0.7346343310291412,
+        "upper": 0.787360447524428
+      },
+      "meanSuccessfulSteps": 332.29265091863516,
+      "meanUniqueCellsVisited": 153.147,
+      "meanRepeatedVisits": 339.06,
+      "meanImmediateBacktracks": 130.339,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.5321850346574192,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.21147277053798577,
+      "meanShortestPathLength": 19.42,
+      "meanSuccessfulPathEfficiency": 17.955584396488863
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 100,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 0,
+      "successRate": 0,
+      "successConfidenceInterval": {
+        "lower": 0,
+        "upper": 0.0038267584855551234
+      },
+      "meanSuccessfulSteps": null,
+      "meanUniqueCellsVisited": 33.849,
+      "meanRepeatedVisits": 49.787,
+      "meanImmediateBacktracks": 24.699,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6046367784803713,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.30133172904086747,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": null
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 100,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 0,
+      "successRate": 0,
+      "successConfidenceInterval": {
+        "lower": 0,
+        "upper": 0.0038267584855551234
+      },
+      "meanSuccessfulSteps": null,
+      "meanUniqueCellsVisited": 38.982,
+      "meanRepeatedVisits": 62.018,
+      "meanImmediateBacktracks": 30.267,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6201799999999994,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3026700000000004,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": null
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 100,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 1,
+      "successRate": 0.001,
+      "successConfidenceInterval": {
+        "lower": 0.00017654637062607809,
+        "upper": 0.0056425585979579355
+      },
+      "meanSuccessfulSteps": 63,
+      "meanUniqueCellsVisited": 88.6,
+      "meanRepeatedVisits": 12.363,
+      "meanImmediateBacktracks": 4.768,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.12362999999999998,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.047680000000000056,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": 1.7027027027027026
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 500,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 3,
+      "successRate": 0.003,
+      "successConfidenceInterval": {
+        "lower": 0.0010207838811386186,
+        "upper": 0.008783014053503173
+      },
+      "meanSuccessfulSteps": 336.6666666666667,
+      "meanUniqueCellsVisited": 119.797,
+      "meanRepeatedVisits": 296.755,
+      "meanImmediateBacktracks": 124.492,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7147493674843449,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.30032272660777687,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": 9.649539914245798
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 500,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 5,
+      "successRate": 0.005,
+      "successConfidenceInterval": {
+        "lower": 0.0021375355273244596,
+        "upper": 0.011650955373375113
+      },
+      "meanSuccessfulSteps": 442.8,
+      "meanUniqueCellsVisited": 139.339,
+      "meanRepeatedVisits": 361.375,
+      "meanImmediateBacktracks": 150.643,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7230902285951297,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3014445702338153,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": 11.567064308240777
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 500,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 118,
+      "successRate": 0.118,
+      "successConfidenceInterval": {
+        "lower": 0.09945155840122327,
+        "upper": 0.13947208508174083
+      },
+      "meanSuccessfulSteps": 312.8898305084746,
+      "meanUniqueCellsVisited": 351.051,
+      "meanRepeatedVisits": 127.87,
+      "meanImmediateBacktracks": 43.815,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.261875403485185,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.0899012724362638,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": 7.251753853550526
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 1000,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 11,
+      "successRate": 0.011,
+      "successConfidenceInterval": {
+        "lower": 0.006153174098086639,
+        "upper": 0.019589395700786272
+      },
+      "meanSuccessfulSteps": 690.5454545454545,
+      "meanUniqueCellsVisited": 208.419,
+      "meanRepeatedVisits": 622.213,
+      "meanImmediateBacktracks": 248.796,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7501623322138157,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.30036697178947447,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": 18.79963604829915
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 1000,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 32,
+      "successRate": 0.032,
+      "successConfidenceInterval": {
+        "lower": 0.022757107858710962,
+        "upper": 0.04482473808376865
+      },
+      "meanSuccessfulSteps": 738.9375,
+      "meanUniqueCellsVisited": 241.997,
+      "meanRepeatedVisits": 750.649,
+      "meanImmediateBacktracks": 298.134,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7562278166837098,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3005735300754168,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": 17.744898604991786
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.15,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 1000,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 248,
+      "successRate": 0.248,
+      "successConfidenceInterval": {
+        "lower": 0.2222322443017442,
+        "upper": 0.2756964419749756
+      },
+      "meanSuccessfulSteps": 538.016129032258,
+      "meanUniqueCellsVisited": 571.259,
+      "meanRepeatedVisits": 315.169,
+      "meanImmediateBacktracks": 104.862,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.3364931645189348,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.11247649915396919,
+      "meanShortestPathLength": 48.21,
+      "meanSuccessfulPathEfficiency": 11.828702515449582
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 100,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 0,
+      "successRate": 0,
+      "successConfidenceInterval": {
+        "lower": 0,
+        "upper": 0.0038267584855551234
+      },
+      "meanSuccessfulSteps": null,
+      "meanUniqueCellsVisited": 26.094,
+      "meanRepeatedVisits": 48.027,
+      "meanImmediateBacktracks": 24.555,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6600244079631752,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.34090212485725324,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": null
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 100,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 0,
+      "successRate": 0,
+      "successConfidenceInterval": {
+        "lower": 0,
+        "upper": 0.0038267584855551234
+      },
+      "meanSuccessfulSteps": null,
+      "meanUniqueCellsVisited": 32.646,
+      "meanRepeatedVisits": 68.354,
+      "meanImmediateBacktracks": 34.33,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.6835399999999991,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3432999999999999,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": null
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 100,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 1,
+      "successRate": 0.001,
+      "successConfidenceInterval": {
+        "lower": 0.00017654637062607809,
+        "upper": 0.0056425585979579355
+      },
+      "meanSuccessfulSteps": 95,
+      "meanUniqueCellsVisited": 77.618,
+      "meanRepeatedVisits": 23.377,
+      "meanImmediateBacktracks": 10.565,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.233773157894737,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.1056526315789474,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": 2.5675675675675675
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 500,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 0,
+      "successRate": 0,
+      "successConfidenceInterval": {
+        "lower": 0,
+        "upper": 0.0038267584855551234
+      },
+      "meanSuccessfulSteps": null,
+      "meanUniqueCellsVisited": 85.653,
+      "meanRepeatedVisits": 284.244,
+      "meanImmediateBacktracks": 124.604,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7718688704052666,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3394941425114729,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": null
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 500,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 1,
+      "successRate": 0.001,
+      "successConfidenceInterval": {
+        "lower": 0.00017654637062607809,
+        "upper": 0.0056425585979579355
+      },
+      "meanSuccessfulSteps": 491,
+      "meanUniqueCellsVisited": 107.231,
+      "meanRepeatedVisits": 393.76,
+      "meanImmediateBacktracks": 168.957,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.7875318778004077,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3379193523421591,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": 9.627450980392156
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 500,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 73,
+      "successRate": 0.073,
+      "successConfidenceInterval": {
+        "lower": 0.05845902621241335,
+        "upper": 0.0908090255342507
+      },
+      "meanSuccessfulSteps": 325.5068493150685,
+      "meanUniqueCellsVisited": 281.867,
+      "meanRepeatedVisits": 206.395,
+      "meanImmediateBacktracks": 83.338,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.4186484143547897,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.16930130816829622,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": 7.144927187570278
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 1000,
+      "agent": "RandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 7,
+      "successRate": 0.007,
+      "successConfidenceInterval": {
+        "lower": 0.0033948684009907646,
+        "upper": 0.014378315465766588
+      },
+      "meanSuccessfulSteps": 849.5714285714286,
+      "meanUniqueCellsVisited": 144.117,
+      "meanRepeatedVisits": 594.056,
+      "meanImmediateBacktracks": 249.269,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.806466874480973,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.3392102079048863,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": 22.754490060604613
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 1000,
+      "agent": "ValidRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 16,
+      "successRate": 0.016,
+      "successConfidenceInterval": {
+        "lower": 0.009872242002277388,
+        "upper": 0.02583206021173997
+      },
+      "meanSuccessfulSteps": 760.5625,
+      "meanUniqueCellsVisited": 181.894,
+      "meanRepeatedVisits": 815.275,
+      "meanImmediateBacktracks": 336.101,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.8181029151161322,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.33735996253380174,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": 17.39135413845627
+    },
+    {
+      "map": {
+        "width": 50,
+        "height": 50,
+        "obstacleDensity": 0.25,
+        "minimumPathDistance": 33
+      },
+      "actionBudget": 1000,
+      "agent": "MemoryRandomAgent",
+      "generatedWorldCount": 100,
+      "generationFailureCount": 0,
+      "trialCount": 1000,
+      "successCount": 173,
+      "successRate": 0.173,
+      "successConfidenceInterval": {
+        "lower": 0.1508192344529515,
+        "upper": 0.19768346559660158
+      },
+      "meanSuccessfulSteps": 579.5838150289018,
+      "meanUniqueCellsVisited": 450.047,
+      "meanRepeatedVisits": 478.221,
+      "meanImmediateBacktracks": 185.989,
+      "meanRepeatedVisitsPerSuccessfulMove": 0.5007729659833199,
+      "meanImmediateBacktracksPerSuccessfulMove": 0.19547841060044743,
+      "meanShortestPathLength": 48.94,
+      "meanSuccessfulPathEfficiency": 12.963065287516635
+    }
+  ]
+}

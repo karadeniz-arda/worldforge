@@ -12,13 +12,21 @@ function createResult(
   stepsTaken: number,
   rejectedMoves: number,
 ): SimulationResult {
+  const successfulMoves = stepsTaken - rejectedMoves;
   return {
     world: createScenario("easy"),
     steps: [],
-    successfulMoves: stepsTaken - rejectedMoves,
+    successfulMoves,
     rejectedMoves,
     stepsTaken,
     termination,
+    movementAnalytics: {
+      uniqueCellsVisited: 2,
+      repeatedVisits: 1,
+      immediateBacktracks: 1,
+      repeatedVisitsPerSuccessfulMove: successfulMoves === 0 ? null : 0.5,
+      immediateBacktracksPerSuccessfulMove: successfulMoves === 0 ? null : 0.5,
+    },
   };
 }
 
@@ -35,6 +43,11 @@ describe("benchmark runner", () => {
       successRate: 2 / 3,
       meanSuccessfulSteps: 6,
       meanRejectedMoves: 4 / 3,
+      meanUniqueCellsVisited: 2,
+      meanRepeatedVisits: 1,
+      meanImmediateBacktracks: 1,
+      meanRepeatedVisitsPerSuccessfulMove: 0.5,
+      meanImmediateBacktracksPerSuccessfulMove: 0.5,
       terminationCounts: { "goal-reached": 2, "step-limit": 1 },
     });
   });
@@ -62,6 +75,7 @@ describe("benchmark runner", () => {
         agents.push(agent);
         return agent;
       },
+      stochastic: false,
     };
 
     runScenarioBenchmark("easy", benchmarkAgent, 1);
@@ -78,6 +92,7 @@ describe("benchmark runner", () => {
       name: "RandomAgent",
       trialCount: 3,
       createAgent: (_world, trialIndex) => new RandomAgent(createSeededRandom(500 + trialIndex)),
+      stochastic: true,
     };
 
     expect(runScenarioBenchmark("easy", seededRandomAgent, 100))
@@ -89,6 +104,7 @@ describe("benchmark runner", () => {
       name: "RuleBasedAgent",
       trialCount: 1,
       createAgent: (world) => new RuleBasedAgent(world.deliveryTarget),
+      stochastic: false,
     };
 
     const summary = runScenarioBenchmark("unreachable", benchmarkAgent, 100);

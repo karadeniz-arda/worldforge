@@ -6,6 +6,9 @@ export const scenarioRows = {
   corridor: ["R####", "....#", "###.#", "#....", "####T"],
   detour: ["R.#.T", "..#..", "..#..", ".....", "....."],
   unreachable: ["R#T", "###", "..."],
+  deadEnd: ["###########", "#R.......##", "#.#######.#", "#.........#", "#########T#"],
+  loops: ["#########", "#R......#", "#.#####.#", "#.#...#T#", "#.#.#.#.#", "#...#...#", "#########"],
+  returnRoute: ["#########", "#R.....##", "#.#####T#", "#.......#", "#########"],
 } as const satisfies Readonly<Record<string, readonly string[]>>;
 
 export type ScenarioName = keyof typeof scenarioRows;

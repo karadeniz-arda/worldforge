@@ -7,6 +7,9 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "benchmark": "tsx src/benchmark-cli.ts",
+    "benchmark:validate": "tsx src/benchmark-cli.ts --validate",
+    "generate": "tsx src/generate-cli.ts",
+    "benchmark:procedural": "tsx src/procedural-benchmark-cli.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
