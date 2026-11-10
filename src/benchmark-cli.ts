@@ -11,25 +11,25 @@ const benchmarkResults = runBenchmarks(scenarioNames, [
   {
     name: "RandomAgent",
     trialCount: stochasticTrialCount,
-    createAgent: (_world, trialIndex) => new RandomAgent(createSeededRandom(10_000 + trialIndex)),
+    createAgent: (_mission, trialIndex) => new RandomAgent(createSeededRandom(10_000 + trialIndex)),
     stochastic: true,
   },
   {
     name: "ValidRandomAgent",
     trialCount: stochasticTrialCount,
-    createAgent: (_world, trialIndex) => new ValidRandomAgent(createSeededRandom(10_000 + trialIndex)),
+    createAgent: (_mission, trialIndex) => new ValidRandomAgent(createSeededRandom(10_000 + trialIndex)),
     stochastic: true,
   },
   {
     name: "MemoryRandomAgent",
     trialCount: stochasticTrialCount,
-    createAgent: (_world, trialIndex) => new MemoryRandomAgent(createSeededRandom(10_000 + trialIndex)),
+    createAgent: (_mission, trialIndex) => new MemoryRandomAgent(createSeededRandom(10_000 + trialIndex)),
     stochastic: true,
   },
   {
     name: "RuleBasedAgent",
     trialCount: 1,
-    createAgent: (world) => new RuleBasedAgent(world.deliveryTarget),
+    createAgent: (mission) => new RuleBasedAgent(mission.target),
     stochastic: false,
   },
 ], maxSteps);

@@ -111,6 +111,17 @@ npm run typecheck
 npm test
 ```
 
-`src/world.ts` owns the typed world model and ASCII parsing; `createInitialWorld()` remains available for existing callers. `src/scenarios.ts` holds the named scenario rows and creates fresh parsed worlds. `src/goal.ts` is a small pure predicate for the current mission objective. `src/observation.ts` exposes only the robot position and four adjacent cell contents. `src/agent.ts` contains the shared agent contract plus random, valid-random, memory-random, and local greedy policies. `src/simulation.ts` coordinates observation, decision, movement, termination, and position traces; it does not duplicate movement validation or expose the full world to the agent. `src/analytics.ts` derives visit and backtrack metrics from those traces. `src/benchmark.ts` creates isolated trials and aggregates their results. `src/render.ts` converts a world value to ASCII. Focused unit tests cover each boundary between these modules.
+## Visual replay
+
+Create a deterministic, standalone browser replay for any named scenario:
+
+```bash
+npm run replay -- --scenario detour --agent memory --seed 42 --steps 100
+open replays/detour-memory-42.html
+```
+
+Supported agents are `random`, `valid-random`, `memory`, `rule`, and `planning`. The viewer shows the true map for inspection alongside an observation-only reconstruction. The latter derives its terrain solely from observations recorded before each action; it does not show hidden distant obstacles. A target is shown there before observation only for `rule` and `planning`, because those agents receive its public coordinate. The viewer does not display PlanningAgent's private map or frontier choice.
+
+`src/world.ts` owns the typed world model and ASCII parsing; `createInitialWorld()` remains available for existing callers. `src/scenarios.ts` holds the named scenario rows and creates fresh parsed worlds. `src/goal.ts` is a small pure predicate for the current mission objective. `src/mission.ts` derives the public start, target, and dimensions given to benchmark agent factories without exposing terrain. `src/observation.ts` exposes only the robot position and four adjacent cell contents. `src/agent.ts` contains the shared agent contract plus random, valid-random, memory-random, and local greedy policies. `src/planning.ts` adds PlanningAgent's private known-cell model, known-safe BFS, and goal-directed frontier selection. `src/simulation.ts` coordinates observation, decision, movement, termination, and position traces; it does not duplicate movement validation or expose the full world to the agent. `src/analytics.ts` derives visit and backtrack metrics from those traces. `src/benchmark.ts` creates isolated trials and aggregates their results. `src/render.ts` converts a world value to ASCII. Focused unit tests cover each boundary between these modules.
 
 This version intentionally has no package pickup or delivery, planning, LLM integration, paid APIs, frontend, pathfinding, memory, goal-directed behavior, or external services.

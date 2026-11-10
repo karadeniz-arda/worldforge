@@ -5,7 +5,7 @@ import { runScenarioBenchmark, summarizeBenchmark, type BenchmarkAgent } from ".
 import { createSeededRandom } from "../src/random.js";
 import type { SimulationResult } from "../src/simulation.js";
 import { createScenario } from "../src/scenarios.js";
-import type { World } from "../src/world.js";
+import type { AgentMission } from "../src/mission.js";
 
 function createResult(
   termination: SimulationResult["termination"],
@@ -63,14 +63,14 @@ describe("benchmark runner", () => {
     expect(summary.meanRejectedMoves).toBe(3.5);
   });
 
-  it("creates fresh worlds and agents for every trial", () => {
-    const worlds: World[] = [];
+  it("creates fresh public missions and agents for every trial", () => {
+    const missions: AgentMission[] = [];
     const agents: Agent[] = [];
     const benchmarkAgent: BenchmarkAgent = {
       name: "RightAgent",
       trialCount: 2,
-      createAgent: (world) => {
-        worlds.push(world);
+      createAgent: (mission) => {
+        missions.push(mission);
         const agent: Agent = { decide: () => "right" };
         agents.push(agent);
         return agent;
@@ -80,18 +80,37 @@ describe("benchmark runner", () => {
 
     runScenarioBenchmark("easy", benchmarkAgent, 1);
 
-    expect(worlds).toHaveLength(2);
-    expect(worlds[0]).not.toBe(worlds[1]);
-    expect(worlds[0]?.robot).toEqual({ x: 0, y: 0 });
-    expect(worlds[1]?.robot).toEqual({ x: 0, y: 0 });
+    expect(missions).toHaveLength(2);
+    expect(missions[0]).not.toBe(missions[1]);
+    expect(missions[0]?.start).toEqual({ x: 0, y: 0 });
+    expect(missions[1]?.start).toEqual({ x: 0, y: 0 });
     expect(agents[0]).not.toBe(agents[1]);
+  });
+
+  it("keeps simulation worlds isolated from mission values received by agents", () => {
+    const receivedMissions: AgentMission[] = [];
+    const benchmarkAgent: BenchmarkAgent = {
+      name: "MissionMutatingAgent",
+      trialCount: 1,
+      createAgent: (mission) => {
+        receivedMissions.push(mission);
+        (mission.start as { x: number; y: number }).x = 99;
+        return { decide: () => "right" };
+      },
+      stochastic: false,
+    };
+
+    const summary = runScenarioBenchmark("easy", benchmarkAgent, 1);
+
+    expect(receivedMissions[0]?.start).toEqual({ x: 99, y: 0 });
+    expect(summary.trials[0]?.world.robot).toEqual({ x: 1, y: 0 });
   });
 
   it("is reproducible when random trials use deterministic distinct seeds", () => {
     const seededRandomAgent: BenchmarkAgent = {
       name: "RandomAgent",
       trialCount: 3,
-      createAgent: (_world, trialIndex) => new RandomAgent(createSeededRandom(500 + trialIndex)),
+      createAgent: (_mission, trialIndex) => new RandomAgent(createSeededRandom(500 + trialIndex)),
       stochastic: true,
     };
 
@@ -103,7 +122,7 @@ describe("benchmark runner", () => {
     const benchmarkAgent: BenchmarkAgent = {
       name: "RuleBasedAgent",
       trialCount: 1,
-      createAgent: (world) => new RuleBasedAgent(world.deliveryTarget),
+      createAgent: (mission) => new RuleBasedAgent(mission.target),
       stochastic: false,
     };
 
@@ -115,5 +134,6 @@ describe("benchmark runner", () => {
       meanRejectedMoves: 100,
       terminationCounts: { "goal-reached": 0, "step-limit": 1 },
     });
+    expect(summary.trials[0]).not.toHaveProperty("trace");
   });
 });

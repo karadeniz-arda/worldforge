@@ -1,5 +1,6 @@
 import { MemoryRandomAgent, RandomAgent, ValidRandomAgent, type Agent } from "./agent.js";
 import { type GeneratedWorld, generateWorldWithMetadata } from "./generation.js";
+import { createAgentMission, type AgentMission } from "./mission.js";
 import { createSeededRandom } from "./random.js";
 import { runSimulation, type SimulationResult } from "./simulation.js";
 import { calculateWilsonScoreInterval, type WilsonScoreInterval } from "./statistics.js";
@@ -22,7 +23,7 @@ export interface ProceduralBenchmarkConfiguration {
 
 export interface ProceduralAgentDefinition {
   readonly name: string;
-  readonly createAgent: (random: () => number) => Agent;
+  readonly createAgent: (mission: AgentMission, random: () => number) => Agent;
 }
 
 export interface GeneratedMapRecord {
@@ -74,9 +75,9 @@ export interface ProceduralBenchmarkRun {
 /** The three existing stochastic policies used in procedural experiments. */
 export function createProceduralAgents(): readonly ProceduralAgentDefinition[] {
   return [
-    { name: "RandomAgent", createAgent: (random) => new RandomAgent(random) },
-    { name: "ValidRandomAgent", createAgent: (random) => new ValidRandomAgent(random) },
-    { name: "MemoryRandomAgent", createAgent: (random) => new MemoryRandomAgent(random) },
+    { name: "RandomAgent", createAgent: (_mission, random) => new RandomAgent(random) },
+    { name: "ValidRandomAgent", createAgent: (_mission, random) => new ValidRandomAgent(random) },
+    { name: "MemoryRandomAgent", createAgent: (_mission, random) => new MemoryRandomAgent(random) },
   ];
 }
 
@@ -121,7 +122,10 @@ export function runProceduralBenchmark(
         const trials: ProceduralTrial[] = [];
         for (const generatedMap of mapsForConfiguration) {
           for (let trialIndex = 0; trialIndex < configuration.agentTrialsPerWorld; trialIndex += 1) {
-            const agent = agentDefinition.createAgent(createSeededRandom(agentSeed(generatedMap.worldSeed, trialIndex)));
+            const agent = agentDefinition.createAgent(
+              createAgentMission(generatedMap.world),
+              createSeededRandom(agentSeed(generatedMap.worldSeed, trialIndex)),
+            );
             const result = runSimulation(cloneWorld(generatedMap.world), agent, actionBudget);
             trials.push({ result, shortestPathLength: generatedMap.shortestPathLength });
           }

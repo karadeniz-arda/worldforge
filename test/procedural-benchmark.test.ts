@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { cloneWorld, runProceduralBenchmark, summarizeProceduralTrials, type GeneratedMapRecord, type ProceduralBenchmarkConfiguration } from "../src/procedural-benchmark.js";
+import { cloneWorld, runProceduralBenchmark, summarizeProceduralTrials, type GeneratedMapRecord, type ProceduralAgentDefinition, type ProceduralBenchmarkConfiguration } from "../src/procedural-benchmark.js";
+import type { AgentMission } from "../src/mission.js";
 import type { SimulationResult } from "../src/simulation.js";
 
 const configuration: ProceduralBenchmarkConfiguration = {
@@ -31,6 +32,30 @@ describe("procedural benchmark", () => {
     expect(cloned.obstacles).not.toBe(generated.world.obstacles);
     expect(run.results.filter((result) => result.actionBudget === 5)[0]?.meanShortestPathLength)
       .toBe(run.results.filter((result) => result.actionBudget === 10)[0]?.meanShortestPathLength);
+  });
+
+  it("provides fresh public missions to procedural agent factories", () => {
+    const missions: AgentMission[] = [];
+    const agents: readonly ProceduralAgentDefinition[] = [{
+      name: "RightAgent",
+      createAgent: (mission) => {
+        missions.push(mission);
+        return { decide: () => "right" };
+      },
+    }];
+    const oneTrialConfiguration: ProceduralBenchmarkConfiguration = {
+      ...configuration,
+      actionBudgets: [1],
+      agentTrialsPerWorld: 1,
+    };
+
+    const run = runProceduralBenchmark(oneTrialConfiguration, agents);
+
+    expect(missions).toHaveLength(2);
+    expect(missions[0]).not.toBe(missions[1]);
+    expect(missions[0]).not.toHaveProperty("obstacles");
+    expect(run.generatedMaps[0]?.world.robot).toEqual(missions[0]?.start);
+    expect(run.generatedMaps[0]?.world.deliveryTarget).toEqual(missions[0]?.target);
   });
 
   it("aggregates procedural success and path-efficiency metrics correctly", () => {

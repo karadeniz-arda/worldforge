@@ -2,12 +2,12 @@ import type { Agent } from "./agent.js";
 import { createScenario, type ScenarioName } from "./scenarios.js";
 import { runSimulation, type SimulationResult, type SimulationTermination } from "./simulation.js";
 import { calculateWilsonScoreInterval, type WilsonScoreInterval } from "./statistics.js";
-import type { World } from "./world.js";
+import { createAgentMission, type AgentMission } from "./mission.js";
 
 export interface BenchmarkAgent {
   readonly name: string;
   readonly trialCount: number;
-  readonly createAgent: (world: World, trialIndex: number) => Agent;
+  readonly createAgent: (mission: AgentMission, trialIndex: number) => Agent;
   readonly stochastic: boolean;
 }
 
@@ -99,7 +99,7 @@ export function runScenarioBenchmark(
 
   for (let trialIndex = 0; trialIndex < benchmarkAgent.trialCount; trialIndex += 1) {
     const world = createScenario(scenario);
-    const agent = benchmarkAgent.createAgent(world, trialIndex);
+    const agent = benchmarkAgent.createAgent(createAgentMission(world), trialIndex);
     trials.push(runSimulation(world, agent, maxSteps));
   }
 
