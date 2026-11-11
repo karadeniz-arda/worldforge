@@ -94,6 +94,16 @@ npm run benchmark:procedural
 
 It generates 100 seeded reachable maps for each 10×10, 20×20, and 50×50 configuration at densities `0.15` and `0.25`. Each generated map is reused across 100, 500, and 1,000 action budgets; every agent receives 10 separately seeded trials per map. Minimum path distance is `max(5, floor((width + height) / 3))`. Results are written to `results/experiment-004.json`, including map seeds, generation attempts, shortest-path lengths, failures, and aggregated metrics. Generator seeds and agent seeds are separate. This is a conditioned sample of reachable generated maps—not a claim about arbitrary random environments. Its trial-level Wilson intervals do not establish generalization to unseen worlds because 10 runs are clustered within each generated map. See [Experiment 004](docs/experiment-004.md) for results and interpretation.
 
+## Experiment 005: planning under partial information
+
+Run the paired PlanningAgent experiment with:
+
+```sh
+npm run experiment:005
+```
+
+It regenerates and validates the same 600 Experiment 004 worlds, compares `MemoryRandomAgent` with one deterministic run per world for each PlanningAgent tie-break policy, and derives the three budget outcomes from maximum-budget trajectories. Results are written to `results/experiment-005.json`. See [Experiment 005](docs/experiment-005.md) for methods, paired comparisons, pilot seeds, and limitations.
+
 Movement analytics are calculated from each action trace:
 
 - `uniqueCellsVisited`: distinct cells occupied, including the starting cell.
@@ -120,8 +130,12 @@ npm run replay -- --scenario detour --agent memory --seed 42 --steps 100
 open replays/detour-memory-42.html
 ```
 
-Supported agents are `random`, `valid-random`, `memory`, `rule`, and `planning`. The viewer shows the true map for inspection alongside an observation-only reconstruction. The latter derives its terrain solely from observations recorded before each action; it does not show hidden distant obstacles. A target is shown there before observation only for `rule` and `planning`, because those agents receive its public coordinate. The viewer does not display PlanningAgent's private map or frontier choice.
+Planning replays accept `--tie-break coordinate` (the default) or `--tie-break information-gain`. The latter uses unknown-neighbor count only after both the existing combined frontier score and known-safe travel distance tie. A small controlled comparison, not a full benchmark experiment, is available with `npm run planning:compare`.
+
+Supported agents are `random`, `valid-random`, `memory`, `rule`, and `planning`. The viewer shows the true map for inspection alongside an observation-only reconstruction. The latter derives its terrain solely from observations recorded before each action; it does not show hidden distant obstacles. A target is shown there before observation only for `rule` and `planning`, because those agents receive its public coordinate.
+
+Planning replays additionally include an optional diagnostics panel. It shows the recorded private discovered map, known-safe planned route, reachable frontier scores, selected frontier, and tie-break explanation for the selected historical step. Other agents produce no diagnostics panel, and normal simulations and benchmarks do not record this data.
 
 `src/world.ts` owns the typed world model and ASCII parsing; `createInitialWorld()` remains available for existing callers. `src/scenarios.ts` holds the named scenario rows and creates fresh parsed worlds. `src/goal.ts` is a small pure predicate for the current mission objective. `src/mission.ts` derives the public start, target, and dimensions given to benchmark agent factories without exposing terrain. `src/observation.ts` exposes only the robot position and four adjacent cell contents. `src/agent.ts` contains the shared agent contract plus random, valid-random, memory-random, and local greedy policies. `src/planning.ts` adds PlanningAgent's private known-cell model, known-safe BFS, and goal-directed frontier selection. `src/simulation.ts` coordinates observation, decision, movement, termination, and position traces; it does not duplicate movement validation or expose the full world to the agent. `src/analytics.ts` derives visit and backtrack metrics from those traces. `src/benchmark.ts` creates isolated trials and aggregates their results. `src/render.ts` converts a world value to ASCII. Focused unit tests cover each boundary between these modules.
 
-This version intentionally has no package pickup or delivery, planning, LLM integration, paid APIs, frontend, pathfinding, memory, goal-directed behavior, or external services.
+This version intentionally has no package pickup or delivery, LLM integration, paid APIs, frontend, A* or other global-map pathfinding, reinforcement learning, or external services.

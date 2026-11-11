@@ -19,6 +19,38 @@ export interface Frontier {
   readonly path: readonly MovementDirection[];
 }
 
+export interface FrontierDiagnostic {
+  readonly position: Position;
+  readonly knownSafeDistance: number;
+  readonly manhattanDistanceToTarget: number;
+  readonly combinedScore: number;
+  readonly unknownNeighborCount: number;
+  readonly path: readonly MovementDirection[];
+}
+
+export type PlanningDecisionMode = "target-route" | "frontier" | "fallback";
+export type FrontierTieBreakPolicy = "coordinate" | "information-gain";
+
+/** Read-only explanation of one decision, derived solely from known state. */
+export interface PlanningDecisionDebug {
+  readonly robot: Position;
+  readonly discoveredMap: KnownMap;
+  readonly frontierCandidates: readonly FrontierDiagnostic[];
+  readonly selectedFrontier: Position | null;
+  readonly selectionReason: string;
+  readonly plannedRoute: readonly MovementDirection[];
+  readonly mode: PlanningDecisionMode;
+  readonly action: MovementDirection;
+  readonly tieBreakPolicy: FrontierTieBreakPolicy;
+}
+
+export interface PlanningAgentOptions {
+  /** Records detached decision snapshots for replay and tests. Disabled by default. */
+  readonly recordDiagnostics?: boolean;
+  /** Defaults to the original coordinate-based tie-break behavior. */
+  readonly tieBreakPolicy?: FrontierTieBreakPolicy;
+}
+
 /** Fixed expansion order used for deterministic BFS path reconstruction. */
 export const planningDirectionOrder: readonly MovementDirection[] = ["right", "down", "left", "up"];
 
@@ -119,23 +151,41 @@ export function findReachableFrontiers(map: KnownMap, start: Position): readonly
 
 /**
  * Chooses the agreed hybrid frontier: shortest known-safe distance plus
- * Manhattan distance to the public target. Ties prefer shorter safe paths,
- * then top-to-bottom and left-to-right coordinates.
+ * Manhattan distance to the public target. Ties prefer shorter safe paths;
+ * information-gain policy then prefers more unknown neighbors before stable
+ * top-to-bottom and left-to-right coordinates.
  */
 export function selectGoalDirectedFrontier(
   map: KnownMap,
   start: Position,
   target: Position,
+  tieBreakPolicy: FrontierTieBreakPolicy = "coordinate",
 ): Frontier | null {
   const frontiers = findReachableFrontiers(map, start);
   let best: Frontier | null = null;
 
   for (const frontier of frontiers) {
-    if (best === null || compareFrontiers(frontier, best, target) < 0) {
+    if (best === null || compareFrontiers(frontier, best, map, target, tieBreakPolicy) < 0) {
       best = frontier;
     }
   }
   return best;
+}
+
+/** Scores every reachable frontier using the v1 goal-directed hybrid formula. */
+export function describeFrontiers(
+  map: KnownMap,
+  start: Position,
+  target: Position,
+): readonly FrontierDiagnostic[] {
+  return findReachableFrontiers(map, start).map((frontier) => ({
+    position: { ...frontier.position },
+    knownSafeDistance: frontier.path.length,
+    manhattanDistanceToTarget: manhattanDistance(frontier.position, target),
+    combinedScore: frontier.path.length + manhattanDistance(frontier.position, target),
+    unknownNeighborCount: countUnknownNeighbors(map, frontier.position),
+    path: [...frontier.path],
+  }));
 }
 
 /**
@@ -145,9 +195,12 @@ export function selectGoalDirectedFrontier(
  */
 export class PlanningAgent implements Agent {
   private readonly mission: AgentMission;
+  private readonly recordDiagnostics: boolean;
+  private readonly tieBreakPolicy: FrontierTieBreakPolicy;
   private map: KnownMap;
+  private latestDecisionDebug: PlanningDecisionDebug | null = null;
 
-  constructor(mission: AgentMission) {
+  constructor(mission: AgentMission, options: PlanningAgentOptions = {}) {
     this.mission = {
       start: { ...mission.start },
       target: { ...mission.target },
@@ -155,6 +208,8 @@ export class PlanningAgent implements Agent {
       height: mission.height,
     };
     this.map = createUnknownMap(this.mission.width, this.mission.height);
+    this.recordDiagnostics = options.recordDiagnostics ?? false;
+    this.tieBreakPolicy = options.tieBreakPolicy ?? "coordinate";
   }
 
   decide(observation: Observation): MovementDirection {
@@ -162,19 +217,78 @@ export class PlanningAgent implements Agent {
 
     const goalPath = findKnownFreePath(this.map, observation.robot, this.mission.target);
     if (goalPath !== null && goalPath.length > 0) {
-      return goalPath[0]!;
+      return this.finishDecision(observation.robot, "target-route", goalPath[0]!, goalPath, null);
     }
 
-    const frontier = selectGoalDirectedFrontier(this.map, observation.robot, this.mission.target);
+    const frontier = selectGoalDirectedFrontier(this.map, observation.robot, this.mission.target, this.tieBreakPolicy);
     if (frontier !== null && frontier.path.length > 0) {
-      return frontier.path[0]!;
+      return this.finishDecision(observation.robot, "frontier", frontier.path[0]!, frontier.path, frontier);
     }
 
-    return "up";
+    return this.finishDecision(observation.robot, "fallback", "up", [], null);
+  }
+
+  /** Returns a detached snapshot so later decisions cannot rewrite history. */
+  getLatestDecisionDebug(): PlanningDecisionDebug | null {
+    return this.latestDecisionDebug === null ? null : copyPlanningDecisionDebug(this.latestDecisionDebug);
+  }
+
+  private finishDecision(
+    robot: Position,
+    mode: PlanningDecisionMode,
+    action: MovementDirection,
+    plannedRoute: readonly MovementDirection[],
+    selectedFrontier: Frontier | null,
+  ): MovementDirection {
+    if (!this.recordDiagnostics) {
+      return action;
+    }
+
+    const candidates = describeFrontiers(this.map, robot, this.mission.target);
+    this.latestDecisionDebug = {
+      robot: { ...robot },
+      discoveredMap: copyKnownMap(this.map),
+      frontierCandidates: candidates,
+      selectedFrontier: selectedFrontier === null ? null : { ...selectedFrontier.position },
+      selectionReason: describeDecisionReason(mode, candidates, selectedFrontier, this.mission.target, this.tieBreakPolicy),
+      plannedRoute: [...plannedRoute],
+      mode,
+      action,
+      tieBreakPolicy: this.tieBreakPolicy,
+    };
+    return action;
   }
 }
 
-function compareFrontiers(first: Frontier, second: Frontier, target: Position): number {
+/** Copies a diagnostic snapshot without giving callers mutable agent state. */
+export function copyPlanningDecisionDebug(snapshot: PlanningDecisionDebug): PlanningDecisionDebug {
+  return {
+    robot: { ...snapshot.robot },
+    discoveredMap: copyKnownMap(snapshot.discoveredMap),
+    frontierCandidates: snapshot.frontierCandidates.map((candidate) => ({
+      position: { ...candidate.position },
+      knownSafeDistance: candidate.knownSafeDistance,
+      manhattanDistanceToTarget: candidate.manhattanDistanceToTarget,
+      combinedScore: candidate.combinedScore,
+      unknownNeighborCount: candidate.unknownNeighborCount,
+      path: [...candidate.path],
+    })),
+    selectedFrontier: snapshot.selectedFrontier === null ? null : { ...snapshot.selectedFrontier },
+    selectionReason: snapshot.selectionReason,
+    plannedRoute: [...snapshot.plannedRoute],
+    mode: snapshot.mode,
+    action: snapshot.action,
+    tieBreakPolicy: snapshot.tieBreakPolicy,
+  };
+}
+
+function compareFrontiers(
+  first: Frontier,
+  second: Frontier,
+  map: KnownMap,
+  target: Position,
+  tieBreakPolicy: FrontierTieBreakPolicy,
+): number {
   const firstScore = first.path.length + manhattanDistance(first.position, target);
   const secondScore = second.path.length + manhattanDistance(second.position, target);
   if (firstScore !== secondScore) {
@@ -183,14 +297,62 @@ function compareFrontiers(first: Frontier, second: Frontier, target: Position): 
   if (first.path.length !== second.path.length) {
     return first.path.length - second.path.length;
   }
+  if (tieBreakPolicy === "information-gain") {
+    const firstInformationGain = countUnknownNeighbors(map, first.position);
+    const secondInformationGain = countUnknownNeighbors(map, second.position);
+    if (firstInformationGain !== secondInformationGain) {
+      return secondInformationGain - firstInformationGain;
+    }
+  }
   if (first.position.y !== second.position.y) {
     return first.position.y - second.position.y;
   }
   return first.position.x - second.position.x;
 }
 
+function describeDecisionReason(
+  mode: PlanningDecisionMode,
+  candidates: readonly FrontierDiagnostic[],
+  selectedFrontier: Frontier | null,
+  target: Position,
+  tieBreakPolicy: FrontierTieBreakPolicy,
+): string {
+  if (mode === "target-route") {
+    return "Target is reachable through known-free cells; following deterministic BFS order right, down, left, up.";
+  }
+  if (mode === "fallback") {
+    return "No known-safe route to the target and no reachable frontier remains; using the Agent interface fallback up.";
+  }
+
+  const selected = candidates.find((candidate) => samePosition(candidate.position, selectedFrontier!.position));
+  if (selected === undefined) {
+    return "Selected a reachable frontier through known-free cells.";
+  }
+  const sameScore = candidates.filter((candidate) => candidate.combinedScore === selected.combinedScore);
+  const sameDistance = sameScore
+    .filter((candidate) => candidate.knownSafeDistance === selected.knownSafeDistance);
+  const sameInformationGain = sameDistance
+    .filter((candidate) => candidate.unknownNeighborCount === selected.unknownNeighborCount);
+  const tieBreak = sameScore.length === 1
+    ? "No tie required."
+    : sameDistance.length === 1
+      ? "Equal scores were resolved by shorter known-safe distance."
+      : tieBreakPolicy === "information-gain" && sameInformationGain.length === 1
+        ? "Equal primary scores and known-safe distances were resolved by higher unknown-neighbor information gain."
+      : "Equal scores and distances were resolved by stable coordinates: top-to-bottom, then left-to-right.";
+  return `Policy ${tieBreakPolicy}. Selected frontier (${selected.position.x}, ${selected.position.y}) with score ${selected.combinedScore} = ${selected.knownSafeDistance} known-safe + ${selected.manhattanDistanceToTarget} Manhattan and ${selected.unknownNeighborCount} unknown neighbors. ${tieBreak}`;
+}
+
+function copyKnownMap(map: KnownMap): KnownMap {
+  return { width: map.width, height: map.height, cells: [...map.cells] };
+}
+
 function hasUnknownNeighbor(map: KnownMap, position: Position): boolean {
-  return planningDirectionOrder.some((direction) => getKnownCell(map, movePosition(position, direction)) === "unknown");
+  return countUnknownNeighbors(map, position) > 0;
+}
+
+function countUnknownNeighbors(map: KnownMap, position: Position): number {
+  return planningDirectionOrder.filter((direction) => getKnownCell(map, movePosition(position, direction)) === "unknown").length;
 }
 
 function reconstructPath(

@@ -1,24 +1,9 @@
 import { mkdir, writeFile } from "node:fs/promises";
 
+import { experiment004Configuration } from "./experiment-004-config.js";
 import { runProceduralBenchmark, type ProceduralBenchmarkResult } from "./procedural-benchmark.js";
 
-const worldSeeds = Array.from({ length: 100 }, (_, index) => 30_000 + index);
-const mapSizes = [10, 20, 50] as const;
-const obstacleDensities = [0.15, 0.25] as const;
-const configuration = {
-  maps: mapSizes.flatMap((size) => obstacleDensities.map((obstacleDensity) => ({
-    width: size,
-    height: size,
-    obstacleDensity,
-    minimumPathDistance: Math.max(5, Math.floor((size * 2) / 3)),
-  }))),
-  worldSeeds,
-  actionBudgets: [100, 500, 1_000],
-  agentTrialsPerWorld: 10,
-  maxGenerationAttempts: 1_000,
-} as const;
-
-const run = runProceduralBenchmark(configuration);
+const run = runProceduralBenchmark(experiment004Configuration);
 
 function formatPercent(value: number): string {
   return `${(value * 100).toFixed(1)}%`;

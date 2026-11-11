@@ -86,9 +86,11 @@ export function createReplayHtml(trace: SimulationTrace, title: string): string 
   .cell.visited { background: #e5efff; } .cell.obstacle, .cell.blocked { background: #3c4658; }
   .cell.target { background: #d9f6df; box-shadow: inset 0 0 0 2px #43a663; }
   .cell.unknown { background: repeating-linear-gradient(45deg, #e7eaf1, #e7eaf1 6px, #f3f4f8 6px, #f3f4f8 12px); }
+  .cell.frontier { box-shadow: inset 0 0 0 2px #a14dd2; } .cell.selected-frontier { box-shadow: inset 0 0 0 3px #e07824; } .cell.planned { background: #fff2ca; } .cell.mission-target { outline: 2px dashed #43a663; outline-offset: -4px; }
   .robot { position: absolute; top: 0; left: 0; z-index: 2; width: calc(100% / var(--cols)); height: calc(100% / var(--rows)); padding: 15%; box-sizing: border-box; transition: transform .22s ease; pointer-events: none; }
   .robot::after { content: ""; display: block; width: 100%; height: 100%; border-radius: 50%; background: #3264d9; border: 2px solid white; box-sizing: border-box; box-shadow: 0 1px 4px #18203366; }
   .legend { display: flex; gap: 11px; flex-wrap: wrap; font-size: .8rem; color: #59647b; margin-top: 12px; } .key { display: inline-flex; align-items: center; gap: 4px; } .swatch { width: 13px; height: 13px; border: 1px solid #aeb7c8; border-radius: 2px; }
+  .decision { margin-top: 14px; font-size: .88rem; line-height: 1.4; } .candidate-list { padding-left: 20px; margin: 8px 0 0; max-height: 150px; overflow: auto; } .candidate-list li { margin: 3px 0; } .diagnostic-route { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
   code { color: #31446d; } @media (max-width: 600px) { body { padding: 16px; } }
 </style>
 </head>
@@ -108,6 +110,7 @@ export function createReplayHtml(trace: SimulationTrace, title: string): string 
   <section class="boards">
     <article class="card"><h2>Actual world</h2><div class="note">Ground-truth obstacles and target, shown for replay inspection.</div><div id="actual" class="board"></div></article>
     <article class="card"><h2>Observed world</h2><div class="note">Unknown cells remain hidden. This is not a display of private agent memory.</div><div id="observed" class="board"></div></article>
+    <article id="planning-card" class="card" hidden><h2>Planning diagnostics</h2><div class="note">Recorded PlanningAgent state at this decision only; it contains no future observations.</div><div id="planning-map" class="board"></div><div class="decision"><div id="planning-mode"></div><div id="planning-reason"></div><div>Planned route: <span id="planning-route" class="diagnostic-route"></span></div><div>Frontier candidates:</div><ul id="planning-candidates" class="candidate-list"></ul></div></article>
   </section>
   <div class="legend"><span class="key"><i class="swatch" style="background:#3c4658"></i>obstacle / observed blocked</span><span class="key"><i class="swatch" style="background:#d9f6df"></i>target</span><span class="key"><i class="swatch" style="background:#e5efff"></i>visited</span><span class="key"><i class="swatch" style="background:#e7eaf1"></i>unknown</span><span class="key"><i class="swatch" style="background:#3264d9;border-radius:50%"></i>robot</span></div>
 </main>
@@ -117,7 +120,7 @@ const replayTitle = ${serializedTitle};
 const offsets = { up:{x:0,y:-1}, down:{x:0,y:1}, left:{x:-1,y:0}, right:{x:1,y:0} };
 let frame = 0, timer = null;
 const $ = (id) => document.getElementById(id);
-const actual = $('actual'), observed = $('observed'), timeline = $('timeline');
+const actual = $('actual'), observed = $('observed'), timeline = $('timeline'), planningCard = $('planning-card');
 $('title').textContent = replayTitle;
 timeline.max = String(trace.steps.length);
 function key(p) { return p.x + ',' + p.y; }
@@ -129,6 +132,9 @@ function setupBoard(board) {
   const robot = document.createElement('div'); robot.className = 'robot'; board.append(robot); return { board, cells:[...board.querySelectorAll('.cell')], robot };
 }
 const actualBoard = setupBoard(actual), observedBoard = setupBoard(observed);
+const hasPlanningDiagnostics = trace.steps.some((step) => step.planningDebug);
+const planningBoard = hasPlanningDiagnostics ? setupBoard($('planning-map')) : null;
+if (hasPlanningDiagnostics) planningCard.hidden = false;
 function positionAt(selected) { return selected === 0 ? trace.initialPosition : trace.steps[selected - 1].positionAfter; }
 function visitedAt(selected) { const visited = new Set([key(trace.initialPosition)]); for (const step of trace.steps.slice(0, selected)) { if (step.succeeded) visited.add(key(step.positionAfter)); } return visited; }
 function revealAt(selected) {
@@ -143,6 +149,20 @@ function revealAt(selected) {
   return cells;
 }
 function moveRobot(robot, p) { robot.style.transform = 'translate(' + (p.x * 100) + '%, ' + (p.y * 100) + '%)'; }
+function pathPositions(start, route) { const positions = []; let current = { x:start.x, y:start.y }; for (const direction of route) { current = { x:current.x + offsets[direction].x, y:current.y + offsets[direction].y }; positions.push(current); } return positions; }
+function renderPlanning(step) {
+  if (!planningBoard) return;
+  const debug = step && step.planningDebug;
+  if (!debug) {
+    planningBoard.cells.forEach((cell) => { cell.className = 'cell unknown'; }); moveRobot(planningBoard.robot, trace.initialPosition);
+    $('planning-mode').textContent = 'No decision snapshot at the initial frame.'; $('planning-reason').textContent = ''; $('planning-route').textContent = '—'; $('planning-candidates').replaceChildren(); return;
+  }
+  const frontierKeys = new Set(debug.frontierCandidates.map((candidate) => key(candidate.position))); const selectedKey = debug.selectedFrontier ? key(debug.selectedFrontier) : null;
+  const routeKeys = new Set(pathPositions(debug.robot, debug.plannedRoute).map(key)); const targetKey = trace.publicMission && trace.publicMission.target ? key(trace.publicMission.target) : null;
+  planningBoard.cells.forEach((cell, i) => { const p = {x: i % trace.map.width, y: Math.floor(i / trace.map.width)}; const state = debug.discoveredMap.cells[i]; cell.className = 'cell ' + state + (routeKeys.has(key(p)) ? ' planned' : '') + (frontierKeys.has(key(p)) ? ' frontier' : '') + (selectedKey === key(p) ? ' selected-frontier' : '') + (targetKey === key(p) ? ' mission-target' : ''); });
+  moveRobot(planningBoard.robot, debug.robot); $('planning-mode').textContent = 'Step ' + step.stepNumber + ': ' + debug.mode + ' · action ' + debug.action + ' · tie-break ' + debug.tieBreakPolicy; $('planning-reason').textContent = debug.selectionReason; $('planning-route').textContent = debug.plannedRoute.length ? debug.plannedRoute.join(' → ') : '—';
+  const rows = debug.frontierCandidates.map((candidate) => { const item = document.createElement('li'); item.textContent = '(' + candidate.position.x + ', ' + candidate.position.y + '): safe ' + candidate.knownSafeDistance + ' + Manhattan ' + candidate.manhattanDistanceToTarget + ' = ' + candidate.combinedScore + '; unknown neighbors ' + candidate.unknownNeighborCount + (selectedKey === key(candidate.position) ? ' — selected' : ''); return item; }); $('planning-candidates').replaceChildren(...rows);
+}
 function render() {
   const position = positionAt(frame), visited = visitedAt(frame), revealed = revealAt(frame), obstacleKeys = new Set(trace.map.obstacles.map(key));
   actualBoard.cells.forEach((cell, i) => { const p = {x: i % trace.map.width, y: Math.floor(i / trace.map.width)}; cell.className = 'cell' + (obstacleKeys.has(key(p)) ? ' obstacle' : key(p) === key(trace.map.target) ? ' target' : visited.has(key(p)) ? ' visited' : ''); });
@@ -153,6 +173,7 @@ function render() {
   $('status').textContent = step ? ('Action: ' + step.action + ' · ' + (step.succeeded ? 'moved' : 'rejected: ' + step.reason) + ' · position (' + position.x + ', ' + position.y + ')') : ('Initial position (' + position.x + ', ' + position.y + ')');
   $('back').disabled = frame === 0; $('forward').disabled = frame === trace.steps.length;
   if (frame === trace.steps.length) $('status').textContent += ' · termination: ' + trace.termination;
+  renderPlanning(step);
 }
 function stop() { if (timer !== null) { clearInterval(timer); timer = null; } $('play').textContent = 'Play'; }
 function play() { if (timer !== null) { stop(); return; } if (frame === trace.steps.length) frame = 0; const delay = 700 / Number($('speed').value); timer = setInterval(() => { if (frame === trace.steps.length) { stop(); return; } frame++; render(); }, delay); $('play').textContent = 'Pause'; render(); }

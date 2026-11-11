@@ -3,6 +3,7 @@ import { calculateMovementAnalytics, type MovementAnalytics } from "./analytics.
 import { hasReachedTarget } from "./goal.js";
 import { moveRobot, type MovementDirection, type RejectedMoveReason } from "./movement.js";
 import { observeWorld, type Observation } from "./observation.js";
+import { copyPlanningDecisionDebug, type PlanningDecisionDebug } from "./planning.js";
 import type { Position, World } from "./world.js";
 
 export type SimulationStep =
@@ -44,6 +45,8 @@ export type ReplayStep = SimulationStep & {
   readonly stepNumber: number;
   /** Exactly the local information supplied to the agent before this action. */
   readonly observation: Observation;
+  /** Present only when a diagnostic PlanningAgent explicitly recorded it. */
+  readonly planningDebug?: PlanningDecisionDebug;
 };
 
 export interface SimulationTrace {
@@ -122,6 +125,7 @@ function runSimulationInternal(
     const positionBefore = { ...currentWorld.robot };
     const observation = observeWorld(currentWorld);
     const action = agent.decide(observation);
+    const planningDebug = traceSteps === undefined ? null : getPlanningDecisionDebug(agent);
     const move = moveRobot(currentWorld, action);
     currentWorld = move.world;
     const positionAfter = { ...currentWorld.robot };
@@ -130,12 +134,12 @@ function runSimulationInternal(
       successfulMoves += 1;
       const simulationStep = { action, succeeded: true, positionBefore, positionAfter } as const;
       steps.push(simulationStep);
-      traceSteps?.push({ ...simulationStep, stepNumber: step + 1, observation: copyObservation(observation) });
+      recordTraceStep(traceSteps, simulationStep, step + 1, observation, planningDebug);
     } else {
       rejectedMoves += 1;
       const simulationStep = { action, succeeded: false, reason: move.reason, positionBefore, positionAfter } as const;
       steps.push(simulationStep);
-      traceSteps?.push({ ...simulationStep, stepNumber: step + 1, observation: copyObservation(observation) });
+      recordTraceStep(traceSteps, simulationStep, step + 1, observation, planningDebug);
     }
 
     if (hasReachedTarget(currentWorld)) {
@@ -165,4 +169,27 @@ function copyObservation(observation: Observation): Observation {
 
 function copyPublicMission(mission: ReplayPublicMission): ReplayPublicMission {
   return mission.target === undefined ? {} : { target: { ...mission.target } };
+}
+
+function recordTraceStep(
+  traceSteps: ReplayStep[] | undefined,
+  simulationStep: SimulationStep,
+  stepNumber: number,
+  observation: Observation,
+  planningDebug: PlanningDecisionDebug | null,
+): void {
+  if (traceSteps === undefined) {
+    return;
+  }
+  const traceStep = { ...simulationStep, stepNumber, observation: copyObservation(observation) };
+  if (planningDebug === null) {
+    traceSteps.push(traceStep);
+  } else {
+    traceSteps.push({ ...traceStep, planningDebug: copyPlanningDecisionDebug(planningDebug) });
+  }
+}
+
+function getPlanningDecisionDebug(agent: Agent): PlanningDecisionDebug | null {
+  const diagnosticAgent = agent as Agent & { getLatestDecisionDebug?: () => PlanningDecisionDebug | null };
+  return diagnosticAgent.getLatestDecisionDebug?.() ?? null;
 }

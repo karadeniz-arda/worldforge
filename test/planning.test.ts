@@ -114,6 +114,55 @@ describe("goal-directed frontiers", () => {
 
     expect(frontier).toEqual({ position: { x: 1, y: 0 }, path: ["up"] });
   });
+
+  it("uses information gain when primary frontier scores tie", () => {
+    const knownMap = map(5, 5, [
+      "free", "free", "blocked", "unknown", "unknown",
+      "free", "free", "blocked", "unknown", "unknown",
+      "unknown", "free", "unknown", "unknown", "unknown",
+      "unknown", "unknown", "unknown", "unknown", "unknown",
+      "unknown", "unknown", "unknown", "unknown", "unknown",
+    ]);
+
+    expect(selectGoalDirectedFrontier(knownMap, { x: 1, y: 1 }, { x: 4, y: 0 }, "coordinate"))
+      .toEqual({ position: { x: 0, y: 1 }, path: ["left"] });
+    expect(selectGoalDirectedFrontier(knownMap, { x: 1, y: 1 }, { x: 4, y: 0 }, "information-gain"))
+      .toEqual({ position: { x: 1, y: 2 }, path: ["down"] });
+  });
+
+  it("does not let information gain override an unequal primary score", () => {
+    const knownMap = map(5, 4, [
+      "blocked", "blocked", "unknown", "unknown", "unknown",
+      "free", "free", "unknown", "unknown", "unknown",
+      "free", "free", "unknown", "unknown", "unknown",
+      "blocked", "unknown", "unknown", "unknown", "unknown",
+    ]);
+
+    expect(selectGoalDirectedFrontier(knownMap, { x: 0, y: 1 }, { x: 4, y: 1 }, "information-gain"))
+      .toEqual({ position: { x: 1, y: 1 }, path: ["right"] });
+  });
+
+  it("does not let information gain override a shorter known-safe distance", () => {
+    const knownMap = map(6, 3, [
+      "blocked", "free", "free", "unknown", "unknown", "unknown",
+      "free", "free", "unknown", "unknown", "unknown", "unknown",
+      "blocked", "blocked", "unknown", "unknown", "unknown", "unknown",
+    ]);
+
+    expect(selectGoalDirectedFrontier(knownMap, { x: 0, y: 1 }, { x: 5, y: 0 }, "information-gain"))
+      .toEqual({ position: { x: 1, y: 1 }, path: ["right"] });
+  });
+
+  it("keeps the original coordinate policy as the default", () => {
+    const knownMap = map(3, 3, [
+      "unknown", "free", "unknown",
+      "free", "free", "blocked",
+      "unknown", "blocked", "unknown",
+    ]);
+
+    expect(selectGoalDirectedFrontier(knownMap, { x: 1, y: 1 }, { x: 0, y: 0 }))
+      .toEqual(selectGoalDirectedFrontier(knownMap, { x: 1, y: 1 }, { x: 0, y: 0 }, "coordinate"));
+  });
 });
 
 describe("PlanningAgent simulation", () => {

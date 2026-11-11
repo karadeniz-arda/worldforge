@@ -10,6 +10,8 @@
     "benchmark:validate": "tsx src/benchmark-cli.ts --validate",
     "generate": "tsx src/generate-cli.ts",
     "replay": "tsx src/replay-cli.ts",
+    "planning:compare": "tsx src/planning-comparison-cli.ts",
+    "experiment:005": "tsx src/experiment-005-cli.ts",
     "benchmark:procedural": "tsx src/procedural-benchmark-cli.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
