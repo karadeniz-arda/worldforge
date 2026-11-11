@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
 
 import { renderWorld } from "../src/render.js";
+import { calculateShortestPathLength } from "../src/generation.js";
+import { createAgentMission } from "../src/mission.js";
+import { PlanningAgent } from "../src/planning.js";
 import { createScenario, scenarioRows } from "../src/scenarios.js";
+import { runSimulation } from "../src/simulation.js";
 
 describe("scenario library", () => {
   it("provides the expected named ASCII maps", () => {
@@ -10,6 +14,7 @@ describe("scenario library", () => {
       corridor: ["R####", "....#", "###.#", "#....", "####T"],
       detour: ["R.#.T", "..#..", "..#..", ".....", "....."],
       unreachable: ["R#T", "###", "..."],
+      unreachableMaze: ["#########", "#R....#T#", "#.###.###", "#...#...#", "#########"],
       deadEnd: ["###########", "#R.......##", "#.#######.#", "#.........#", "#########T#"],
       loops: ["#########", "#R......#", "#.#####.#", "#.#...#T#", "#.#.#.#.#", "#...#...#", "#########"],
       returnRoute: ["#########", "#R.....##", "#.#####T#", "#.......#", "#########"],
@@ -34,6 +39,17 @@ describe("scenario library", () => {
 
   it("renders parsed worlds at their own dimensions", () => {
     expect(renderWorld(createScenario("unreachable"))).toBe("R#T\n###\n...");
+  });
+
+  it("provides a nontrivial unreachable maze for PlanningAgent replay", () => {
+    const world = createScenario("unreachableMaze");
+    const result = runSimulation(world, new PlanningAgent(createAgentMission(world)), 100);
+
+    expect(calculateShortestPathLength(world)).toBeNull();
+    expect(result.termination).toBe("target-unreachable");
+    expect(result.successfulMoves).toBeGreaterThan(1);
+    expect(result.rejectedMoves).toBe(0);
+    expect(result.stepsTaken).toBe(result.successfulMoves);
   });
 
   it.each(["deadEnd", "loops", "returnRoute"] as const)("parses the valid %s adversarial scenario", (name) => {

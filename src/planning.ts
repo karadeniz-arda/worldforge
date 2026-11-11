@@ -1,4 +1,4 @@
-import type { Agent } from "./agent.js";
+import type { Agent, AgentDecision } from "./agent.js";
 import type { AgentMission } from "./mission.js";
 import type { MovementDirection } from "./movement.js";
 import type { Observation } from "./observation.js";
@@ -28,7 +28,7 @@ export interface FrontierDiagnostic {
   readonly path: readonly MovementDirection[];
 }
 
-export type PlanningDecisionMode = "target-route" | "frontier" | "fallback";
+export type PlanningDecisionMode = "target-route" | "frontier" | "unreachable";
 export type FrontierTieBreakPolicy = "coordinate" | "information-gain";
 
 /** Read-only explanation of one decision, derived solely from known state. */
@@ -40,7 +40,7 @@ export interface PlanningDecisionDebug {
   readonly selectionReason: string;
   readonly plannedRoute: readonly MovementDirection[];
   readonly mode: PlanningDecisionMode;
-  readonly action: MovementDirection;
+  readonly action: AgentDecision;
   readonly tieBreakPolicy: FrontierTieBreakPolicy;
 }
 
@@ -190,8 +190,8 @@ export function describeFrontiers(
 
 /**
  * Goal-directed, map-based exploration over observations only. It replans on
- * every observation and falls back to "up" when no route or frontier exists;
- * Agent currently has no explicit action for reporting an unreachable mission.
+ * every observation and explicitly reports target-unreachable when no route or
+ * reachable frontier remains.
  */
 export class PlanningAgent implements Agent {
   private readonly mission: AgentMission;
@@ -212,7 +212,7 @@ export class PlanningAgent implements Agent {
     this.tieBreakPolicy = options.tieBreakPolicy ?? "coordinate";
   }
 
-  decide(observation: Observation): MovementDirection {
+  decide(observation: Observation): AgentDecision {
     this.map = updateKnownMap(this.map, observation);
 
     const goalPath = findKnownFreePath(this.map, observation.robot, this.mission.target);
@@ -225,7 +225,13 @@ export class PlanningAgent implements Agent {
       return this.finishDecision(observation.robot, "frontier", frontier.path[0]!, frontier.path, frontier);
     }
 
-    return this.finishDecision(observation.robot, "fallback", "up", [], null);
+    return this.finishDecision(
+      observation.robot,
+      "unreachable",
+      { kind: "stop", reason: "target-unreachable" },
+      [],
+      null,
+    );
   }
 
   /** Returns a detached snapshot so later decisions cannot rewrite history. */
@@ -236,10 +242,10 @@ export class PlanningAgent implements Agent {
   private finishDecision(
     robot: Position,
     mode: PlanningDecisionMode,
-    action: MovementDirection,
+    action: AgentDecision,
     plannedRoute: readonly MovementDirection[],
     selectedFrontier: Frontier | null,
-  ): MovementDirection {
+  ): AgentDecision {
     if (!this.recordDiagnostics) {
       return action;
     }
@@ -320,8 +326,8 @@ function describeDecisionReason(
   if (mode === "target-route") {
     return "Target is reachable through known-free cells; following deterministic BFS order right, down, left, up.";
   }
-  if (mode === "fallback") {
-    return "No known-safe route to the target and no reachable frontier remains; using the Agent interface fallback up.";
+  if (mode === "unreachable") {
+    return "No known-safe route to the target and no reachable frontier remains; reporting target-unreachable.";
   }
 
   const selected = candidates.find((candidate) => samePosition(candidate.position, selectedFrontier!.position));

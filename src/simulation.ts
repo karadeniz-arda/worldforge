@@ -1,4 +1,4 @@
-import type { Agent } from "./agent.js";
+import type { Agent, AgentDecision } from "./agent.js";
 import { calculateMovementAnalytics, type MovementAnalytics } from "./analytics.js";
 import { hasReachedTarget } from "./goal.js";
 import { moveRobot, type MovementDirection, type RejectedMoveReason } from "./movement.js";
@@ -21,7 +21,7 @@ export type SimulationStep =
     readonly positionAfter: Position;
   };
 
-export type SimulationTermination = "goal-reached" | "step-limit";
+export type SimulationTermination = "goal-reached" | "target-unreachable" | "step-limit";
 
 export interface SimulationResult {
   readonly world: World;
@@ -49,6 +49,17 @@ export type ReplayStep = SimulationStep & {
   readonly planningDebug?: PlanningDecisionDebug;
 };
 
+/** A non-movement terminal decision recorded separately from movement steps. */
+export interface ReplayTerminalEvent {
+  readonly kind: "agent-stop";
+  /** Number of completed movement attempts before the stop decision. */
+  readonly afterMovementSteps: number;
+  readonly position: Position;
+  readonly observation: Observation;
+  readonly decision: Extract<AgentDecision, { readonly kind: "stop" }>;
+  readonly planningDebug?: PlanningDecisionDebug;
+}
+
 export interface SimulationTrace {
   readonly map: ReplayMap;
   /** Public mission capabilities actually supplied to the replayed agent. */
@@ -57,6 +68,7 @@ export interface SimulationTrace {
   readonly finalPosition: Position;
   readonly termination: SimulationTermination;
   readonly steps: readonly ReplayStep[];
+  readonly terminalEvent: ReplayTerminalEvent | null;
 }
 
 /** Optional public facts used only to render what an agent could know. */
@@ -105,6 +117,7 @@ export function runSimulationWithTrace(
       finalPosition: { ...run.result.world.robot },
       termination: run.result.termination,
       steps: traceSteps,
+      terminalEvent: run.terminalEvent,
     },
   };
 }
@@ -114,18 +127,34 @@ function runSimulationInternal(
   agent: Agent,
   stepCount: number,
   traceSteps?: ReplayStep[],
-): { readonly result: SimulationResult } {
+): { readonly result: SimulationResult; readonly terminalEvent: ReplayTerminalEvent | null } {
   let currentWorld = world;
   let successfulMoves = 0;
   let rejectedMoves = 0;
   const steps: SimulationStep[] = [];
+  let terminalEvent: ReplayTerminalEvent | null = null;
   let termination: SimulationTermination = hasReachedTarget(currentWorld) ? "goal-reached" : "step-limit";
 
   for (let step = 0; step < stepCount && termination !== "goal-reached"; step += 1) {
     const positionBefore = { ...currentWorld.robot };
     const observation = observeWorld(currentWorld);
-    const action = agent.decide(observation);
+    const decision = agent.decide(observation);
     const planningDebug = traceSteps === undefined ? null : getPlanningDecisionDebug(agent);
+    if (isStopDecision(decision)) {
+      termination = "target-unreachable";
+      if (traceSteps !== undefined) {
+        terminalEvent = {
+          kind: "agent-stop",
+          afterMovementSteps: steps.length,
+          position: { ...currentWorld.robot },
+          observation: copyObservation(observation),
+          decision: { ...decision },
+          ...(planningDebug === null ? {} : { planningDebug: copyPlanningDecisionDebug(planningDebug) }),
+        };
+      }
+      break;
+    }
+    const action = decision;
     const move = moveRobot(currentWorld, action);
     currentWorld = move.world;
     const positionAfter = { ...currentWorld.robot };
@@ -157,6 +186,7 @@ function runSimulationInternal(
       termination,
       movementAnalytics: calculateMovementAnalytics(world.robot, steps),
     },
+    terminalEvent,
   };
 }
 
@@ -192,4 +222,8 @@ function recordTraceStep(
 function getPlanningDecisionDebug(agent: Agent): PlanningDecisionDebug | null {
   const diagnosticAgent = agent as Agent & { getLatestDecisionDebug?: () => PlanningDecisionDebug | null };
   return diagnosticAgent.getLatestDecisionDebug?.() ?? null;
+}
+
+function isStopDecision(decision: AgentDecision): decision is Extract<AgentDecision, { readonly kind: "stop" }> {
+  return typeof decision !== "string";
 }

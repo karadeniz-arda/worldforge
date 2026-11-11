@@ -20,6 +20,7 @@ const trace: SimulationTrace = {
   initialPosition: { x: 0, y: 0 },
   finalPosition: { x: 2, y: 0 },
   termination: "goal-reached",
+  terminalEvent: null,
   steps: [
     {
       stepNumber: 1,

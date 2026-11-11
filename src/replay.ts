@@ -132,7 +132,7 @@ function setupBoard(board) {
   const robot = document.createElement('div'); robot.className = 'robot'; board.append(robot); return { board, cells:[...board.querySelectorAll('.cell')], robot };
 }
 const actualBoard = setupBoard(actual), observedBoard = setupBoard(observed);
-const hasPlanningDiagnostics = trace.steps.some((step) => step.planningDebug);
+const hasPlanningDiagnostics = trace.steps.some((step) => step.planningDebug) || Boolean(trace.terminalEvent && trace.terminalEvent.planningDebug);
 const planningBoard = hasPlanningDiagnostics ? setupBoard($('planning-map')) : null;
 if (hasPlanningDiagnostics) planningCard.hidden = false;
 function positionAt(selected) { return selected === 0 ? trace.initialPosition : trace.steps[selected - 1].positionAfter; }
@@ -150,9 +150,9 @@ function revealAt(selected) {
 }
 function moveRobot(robot, p) { robot.style.transform = 'translate(' + (p.x * 100) + '%, ' + (p.y * 100) + '%)'; }
 function pathPositions(start, route) { const positions = []; let current = { x:start.x, y:start.y }; for (const direction of route) { current = { x:current.x + offsets[direction].x, y:current.y + offsets[direction].y }; positions.push(current); } return positions; }
-function renderPlanning(step) {
+function renderPlanning(step, terminalEvent) {
   if (!planningBoard) return;
-  const debug = step && step.planningDebug;
+  const debug = terminalEvent ? terminalEvent.planningDebug : step && step.planningDebug;
   if (!debug) {
     planningBoard.cells.forEach((cell) => { cell.className = 'cell unknown'; }); moveRobot(planningBoard.robot, trace.initialPosition);
     $('planning-mode').textContent = 'No decision snapshot at the initial frame.'; $('planning-reason').textContent = ''; $('planning-route').textContent = '—'; $('planning-candidates').replaceChildren(); return;
@@ -160,7 +160,8 @@ function renderPlanning(step) {
   const frontierKeys = new Set(debug.frontierCandidates.map((candidate) => key(candidate.position))); const selectedKey = debug.selectedFrontier ? key(debug.selectedFrontier) : null;
   const routeKeys = new Set(pathPositions(debug.robot, debug.plannedRoute).map(key)); const targetKey = trace.publicMission && trace.publicMission.target ? key(trace.publicMission.target) : null;
   planningBoard.cells.forEach((cell, i) => { const p = {x: i % trace.map.width, y: Math.floor(i / trace.map.width)}; const state = debug.discoveredMap.cells[i]; cell.className = 'cell ' + state + (routeKeys.has(key(p)) ? ' planned' : '') + (frontierKeys.has(key(p)) ? ' frontier' : '') + (selectedKey === key(p) ? ' selected-frontier' : '') + (targetKey === key(p) ? ' mission-target' : ''); });
-  moveRobot(planningBoard.robot, debug.robot); $('planning-mode').textContent = 'Step ' + step.stepNumber + ': ' + debug.mode + ' · action ' + debug.action + ' · tie-break ' + debug.tieBreakPolicy; $('planning-reason').textContent = debug.selectionReason; $('planning-route').textContent = debug.plannedRoute.length ? debug.plannedRoute.join(' → ') : '—';
+  const debugAction = typeof debug.action === 'string' ? debug.action : ('stop: ' + debug.action.reason); const decisionLabel = terminalEvent ? ('After ' + terminalEvent.afterMovementSteps + ' movement steps') : ('Step ' + step.stepNumber);
+  moveRobot(planningBoard.robot, debug.robot); $('planning-mode').textContent = decisionLabel + ': ' + debug.mode + ' · action ' + debugAction + ' · tie-break ' + debug.tieBreakPolicy; $('planning-reason').textContent = debug.selectionReason; $('planning-route').textContent = debug.plannedRoute.length ? debug.plannedRoute.join(' → ') : '—';
   const rows = debug.frontierCandidates.map((candidate) => { const item = document.createElement('li'); item.textContent = '(' + candidate.position.x + ', ' + candidate.position.y + '): safe ' + candidate.knownSafeDistance + ' + Manhattan ' + candidate.manhattanDistanceToTarget + ' = ' + candidate.combinedScore + '; unknown neighbors ' + candidate.unknownNeighborCount + (selectedKey === key(candidate.position) ? ' — selected' : ''); return item; }); $('planning-candidates').replaceChildren(...rows);
 }
 function render() {
@@ -169,11 +170,11 @@ function render() {
   observedBoard.cells.forEach((cell, i) => { cell.className = 'cell ' + revealed[i] + (revealed[i] === 'free' && visited.has((i % trace.map.width) + ',' + Math.floor(i / trace.map.width)) ? ' visited' : ''); });
   moveRobot(actualBoard.robot, position); moveRobot(observedBoard.robot, position);
   timeline.value = String(frame); $('counter').textContent = 'Step ' + frame + ' / ' + trace.steps.length;
-  const step = frame === 0 ? null : trace.steps[frame - 1];
-  $('status').textContent = step ? ('Action: ' + step.action + ' · ' + (step.succeeded ? 'moved' : 'rejected: ' + step.reason) + ' · position (' + position.x + ', ' + position.y + ')') : ('Initial position (' + position.x + ', ' + position.y + ')');
+  const step = frame === 0 ? null : trace.steps[frame - 1]; const terminalEvent = frame === trace.steps.length ? trace.terminalEvent : null;
+  $('status').textContent = terminalEvent ? ('Agent stopped: ' + terminalEvent.decision.reason + ' · after ' + terminalEvent.afterMovementSteps + ' movement steps · position (' + position.x + ', ' + position.y + ')') : step ? ('Action: ' + step.action + ' · ' + (step.succeeded ? 'moved' : 'rejected: ' + step.reason) + ' · position (' + position.x + ', ' + position.y + ')') : ('Initial position (' + position.x + ', ' + position.y + ')');
   $('back').disabled = frame === 0; $('forward').disabled = frame === trace.steps.length;
   if (frame === trace.steps.length) $('status').textContent += ' · termination: ' + trace.termination;
-  renderPlanning(step);
+  renderPlanning(step, terminalEvent);
 }
 function stop() { if (timer !== null) { clearInterval(timer); timer = null; } $('play').textContent = 'Play'; }
 function play() { if (timer !== null) { stop(); return; } if (frame === trace.steps.length) frame = 0; const delay = 700 / Number($('speed').value); timer = setInterval(() => { if (frame === trace.steps.length) { stop(); return; } frame++; render(); }, delay); $('play').textContent = 'Pause'; render(); }

@@ -2,9 +2,16 @@ import type { MovementDirection } from "./movement.js";
 import type { Observation } from "./observation.js";
 import type { Position } from "./world.js";
 
+export type AgentDecision =
+  | MovementDirection
+  | {
+    readonly kind: "stop";
+    readonly reason: "target-unreachable";
+  };
+
 /** Chooses one movement action from a local observation. */
 export interface Agent {
-  decide(observation: Observation): MovementDirection;
+  decide(observation: Observation): AgentDecision;
 }
 
 const directions: readonly MovementDirection[] = ["up", "down", "left", "right"];

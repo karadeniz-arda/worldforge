@@ -174,13 +174,13 @@ describe("PlanningAgent simulation", () => {
     expect(result.world.robot).toEqual(world.deliveryTarget);
   });
 
-  it("uses the existing fallback without internal looping when no frontier is reachable", () => {
+  it("reports target-unreachable when no frontier is reachable", () => {
     const world = createScenario("unreachable");
     const result = runSimulation(world, new PlanningAgent(createAgentMission(world)), 10);
 
-    expect(result.termination).toBe("step-limit");
-    expect(result.stepsTaken).toBe(10);
-    expect(result.steps.every((step) => step.action === "up" && !step.succeeded)).toBe(true);
+    expect(result.termination).toBe("target-unreachable");
+    expect(result.stepsTaken).toBe(0);
+    expect(result.rejectedMoves).toBe(0);
   });
 
   it("keeps learned state isolated to each agent instance and remains deterministic", () => {

@@ -57,6 +57,7 @@ export function summarizeBenchmark(
     .filter((value): value is number => value !== null);
   const terminationCounts: Record<SimulationTermination, number> = {
     "goal-reached": 0,
+    "target-unreachable": 0,
     "step-limit": 0,
   };
 
