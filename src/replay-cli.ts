@@ -10,8 +10,9 @@ import { runSimulationWithTrace } from "./simulation.js";
 import { generateBarrierWorld } from "./structural-generation.js";
 import { generateMazeWorld } from "./maze-generation.js";
 import { generateTrapWorld } from "./trap-generation.js";
+import { OptimisticBFSAgent } from "./optimistic-bfs.js";
 
-type ReplayAgentName = "random" | "valid-random" | "memory" | "rule" | "planning";
+type ReplayAgentName = "random" | "valid-random" | "memory" | "rule" | "planning" | "optimistic";
 
 interface ReplayOptions {
   readonly scenario: ScenarioName;
@@ -39,7 +40,7 @@ const layoutName = trap !== null ? `trap-${options.width}x${options.height}-worl
   : `barrier-${options.structural}-${options.width}x${options.height}-world-${options.worldSeed}-door-${generated.doorRow ?? "none"}`;
 const mission = createAgentMission(world);
 const agent = createAgent(options.agent, mission, options.seed, options.tieBreakPolicy);
-const publicMission = options.agent === "rule" || options.agent === "planning" ? { target: mission.target } : null;
+const publicMission = options.agent === "rule" || options.agent === "planning" || options.agent === "optimistic" ? { target: mission.target } : null;
 const replay = runSimulationWithTrace(world, agent, options.steps, publicMission);
 const policySegment = options.agent === "planning" ? `-${options.tieBreakPolicy}` : "";
 const filename = `${layoutName}-${options.agent}${policySegment}-${options.seed}.html`;
@@ -77,7 +78,9 @@ function createAgent(
     case "rule":
       return new RuleBasedAgent(mission.target);
     case "planning":
-      return new PlanningAgent(mission, { recordDiagnostics: true, tieBreakPolicy });
+      return new PlanningAgent(mission, { recordDiagnostics: true, tieBreakPolicy, random });
+    case "optimistic":
+      return new OptimisticBFSAgent(mission);
   }
 }
 
@@ -115,7 +118,7 @@ function parseOptions(argumentsList: readonly string[]): ReplayOptions {
       index += 1;
     } else if (option === "--agent" && value !== undefined) {
       if (!isReplayAgentName(value)) {
-        throw new Error('Unknown agent. Choose one of: random, valid-random, memory, rule, planning.');
+        throw new Error('Unknown agent. Choose one of: random, valid-random, memory, rule, planning, optimistic.');
       }
       agent = value;
       index += 1;
@@ -130,7 +133,7 @@ function parseOptions(argumentsList: readonly string[]): ReplayOptions {
       index += 1;
     } else if (option === "--tie-break" && value !== undefined) {
       if (!isTieBreakPolicy(value)) {
-        throw new Error('Unknown tie-break policy. Choose "coordinate" or "information-gain".');
+        throw new Error('Unknown tie-break policy. Choose "coordinate", "information-gain" or "random".');
       }
       tieBreakPolicy = value;
       index += 1;
@@ -153,11 +156,11 @@ function parseOptions(argumentsList: readonly string[]): ReplayOptions {
 }
 
 function isReplayAgentName(value: string): value is ReplayAgentName {
-  return value === "random" || value === "valid-random" || value === "memory" || value === "rule" || value === "planning";
+  return value === "random" || value === "valid-random" || value === "memory" || value === "rule" || value === "planning" || value === "optimistic";
 }
 
 function isTieBreakPolicy(value: string): value is FrontierTieBreakPolicy {
-  return value === "coordinate" || value === "information-gain";
+  return value === "coordinate" || value === "information-gain" || value === "random";
 }
 
 function parseIntegerOption(name: string, value: string): number {

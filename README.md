@@ -64,6 +64,7 @@ All agents receive the current position and four neighbouring cell contents
 | MemoryRandomAgent | Injectable random function | Remembers observed robot positions, prefers unvisited safe neighbours, and permits revisits when necessary. |
 | RuleBasedAgent | Public target coordinate | Greedily reduces Manhattan distance using local safe moves, with deterministic fallback. |
 | PlanningAgent | Public start, target, width, and height | Maintains an unknown/free/blocked map and replans after each observation. |
+| OptimisticBFSAgent | Public start, target, width, and height | Recomputes target-rooted BFS through free and unknown cells, then selects an observed-safe step. |
 
 `AgentMission` copies public coordinates and dimensions from `World` for agent
 factories. Each policy receives the constructor inputs listed above. Hidden
@@ -84,6 +85,17 @@ Both policies minimize score, then known-safe travel distance. The default
 same coordinate order. Safe BFS traverses only known-free cells. When neither
 a target route nor a reachable frontier remains, PlanningAgent reports
 `target-unreachable`.
+
+An optional `random` control samples uniformly among frontiers tied on score
+and known-safe distance, using the replay's agent seed. The
+[navigation control note](docs/navigation-controls.md) records its development
+comparison and a verified counterexample to optimistic trajectory optimality.
+
+OptimisticBFSAgent is a separate competing policy. Its optimistic graph includes
+unknown cells for planning, while execution uses only currently observed safe
+neighbours. Equal distances use right, down, left, up. Algorithm reasoning and
+the six-world development comparison appear in the
+[Optimistic BFS note](docs/optimistic-bfs.md).
 
 ## Architecture
 
@@ -167,7 +179,7 @@ guarantees, example measurements, and seeds are documented in the
 ## Visual replay
 
 The replay CLI writes a standalone HTML file into `replays/`. It supports
-`random`, `valid-random`, `memory`, `rule`, and `planning` agents on named and
+`random`, `valid-random`, `memory`, `rule`, `planning`, and `optimistic` agents on named and
 structural worlds.
 
 The viewer provides play/pause, forward/backward stepping, a timeline, speed
@@ -175,7 +187,8 @@ control, visited cells, and move outcomes. The true-world view accompanies an
 observation-only reconstruction. Planning replays additionally show historical
 internal maps, frontier scores, selected frontiers, safe routes, and decision
 explanations. Public target coordinates can appear before local discovery for
-RuleBasedAgent and PlanningAgent. Stop events retain terminal diagnostics.
+RuleBasedAgent, PlanningAgent, and OptimisticBFSAgent. PlanningAgent stop events
+retain terminal planning diagnostics.
 
 See the [replay guide](docs/replays.md) for CLI options, per-seed recipes, and
 macOS open commands. A small exploratory policy comparison is available through
@@ -194,7 +207,7 @@ macOS open commands. A small exploratory policy comparison is available through
 
 ## Roadmap
 
-Planned work includes optimistic unknown-as-free BFS, Experiment 006 for
+Planned work includes Experiment 006 for
 structural environment evaluation, warehouse tasks with pickup and delivery,
 and dynamic environments. These capabilities are pending implementation.
 
@@ -206,6 +219,7 @@ and dynamic environments. These capabilities are pending implementation.
 - [Experiment 004 — memory under scale](docs/experiment-004.md)
 - [Experiment 005 — planning under partial information](docs/experiment-005.md)
 - [Planning correctness and termination assumptions](docs/planning-correctness.md)
+- [Optimistic BFS algorithm and development comparison](docs/optimistic-bfs.md)
 - [Doorway decision analysis](docs/doorway-failure-analysis.md)
 - [Development conventions](AGENTS.md)
 - [MIT license](LICENSE)

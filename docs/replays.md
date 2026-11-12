@@ -11,16 +11,22 @@ browser. The `open` commands below use macOS.
 |---|---|
 | `--scenario` | A named scenario, default `easy`. |
 | `--structural` | `doorway`, `sealed`, `maze`, or `trap`, used instead of `--scenario`. |
-| `--agent` | `random` (default), `valid-random`, `memory`, `rule`, or `planning`. |
+| `--agent` | `random` (default), `valid-random`, `memory`, `rule`, `planning`, or `optimistic`. |
 | `--seed` | Integer agent-randomness seed, default 42. |
 | `--steps` | Non-negative action limit, default 100. |
-| `--tie-break` | Planning policy, `coordinate` (default) or `information-gain`. |
+| `--tie-break` | Planning policy, `coordinate` (default), `information-gain`, or `random`. |
 | `--width`, `--height` | Structural dimensions, each defaulting to 9. |
 | `--world-seed` | Structural world seed, default 42. |
 | `--door-row` | Optional zero-based doorway row, valid for `doorway` only. |
 
-World and agent randomness have separate seed options. PlanningAgent is
-deterministic for a fixed world and policy. Its filename retains the agent seed
+World and agent randomness have separate seed options. The `random` frontier
+policy uses `--seed` (default 42). It samples only among candidates tied on
+combined score and known-safe distance, in row-major candidate order. Each
+genuine tie consumes one draw. Unique winners, target routes, stop decisions,
+and diagnostic rendering consume zero draws. Each replay constructs a fresh
+seeded RNG. PlanningAgent's random policy is reproducible for a fixed world,
+policy, and agent seed. Its coordinate and information-gain policies are
+deterministic for a fixed world. The filename retains the agent seed
 for a consistent naming convention. Rerunning identical options overwrites the
 same replay filename. Structural metadata is printed before the outcome.
 
@@ -33,7 +39,7 @@ decision is a terminal event with its own diagnostics and consumes zero actions.
 
 The true-world panel displays the static map. The observation-only panel
 reconstructs terrain from recorded observations through the selected point.
-RuleBasedAgent and PlanningAgent receive the public target coordinate, which
+RuleBasedAgent, PlanningAgent, and OptimisticBFSAgent receive the public target coordinate, which
 the viewer may display before discovery. Other agents reveal the target
 through observation.
 
@@ -78,6 +84,13 @@ open replays/unreachableMaze-planning-coordinate-42.html
 ```
 
 ## Doorway and sealed barrier
+
+For the random control, specify an agent seed independently of the world seed.
+
+```sh
+npm run replay -- --structural doorway --width 9 --height 15 --world-seed 42 --door-row 14 --agent planning --tie-break random --seed 42 --steps 2000
+open replays/barrier-doorway-9x15-world-42-door-14-planning-random-42.html
+```
 
 ```sh
 npm run replay -- --structural doorway --width 9 --height 15 --world-seed 42 --door-row 14 --agent planning --steps 2000

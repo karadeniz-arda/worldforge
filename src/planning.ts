@@ -3,15 +3,13 @@ import type { AgentMission } from "./mission.js";
 import type { MovementDirection } from "./movement.js";
 import type { Observation } from "./observation.js";
 import type { Position } from "./world.js";
+import {
+  adjacentPosition as movePosition, cardinalDirections, copyKnownMap,
+  countUnknownNeighbors, createUnknownMap, getKnownCell, updateKnownMap, type KnownMap,
+} from "./known-map.js";
 
-/** Terrain knowledge available to PlanningAgent; unknown is never traversable. */
-export type KnownCell = "unknown" | "free" | "blocked";
-
-export interface KnownMap {
-  readonly width: number;
-  readonly height: number;
-  readonly cells: readonly KnownCell[];
-}
+// Preserve existing imports while making knowledge reusable by other policies.
+export { createUnknownMap, getKnownCell, updateKnownMap, type KnownCell, type KnownMap } from "./known-map.js";
 
 export interface Frontier {
   readonly position: Position;
@@ -29,7 +27,7 @@ export interface FrontierDiagnostic {
 }
 
 export type PlanningDecisionMode = "target-route" | "frontier" | "unreachable";
-export type FrontierTieBreakPolicy = "coordinate" | "information-gain";
+export type FrontierTieBreakPolicy = "coordinate" | "information-gain" | "random";
 
 /** Read-only explanation of one decision, derived solely from known state. */
 export interface PlanningDecisionDebug {
@@ -49,45 +47,12 @@ export interface PlanningAgentOptions {
   readonly recordDiagnostics?: boolean;
   /** Defaults to the original coordinate-based tie-break behavior. */
   readonly tieBreakPolicy?: FrontierTieBreakPolicy;
+  /** Required for the random policy. Must return a value in [0, 1). */
+  readonly random?: () => number;
 }
 
 /** Fixed expansion order used for deterministic BFS path reconstruction. */
-export const planningDirectionOrder: readonly MovementDirection[] = ["right", "down", "left", "up"];
-
-const directionOffsets: Record<MovementDirection, Position> = {
-  up: { x: 0, y: -1 },
-  down: { x: 0, y: 1 },
-  left: { x: -1, y: 0 },
-  right: { x: 1, y: 0 },
-};
-
-/** Creates a map with no terrain knowledge. */
-export function createUnknownMap(width: number, height: number): KnownMap {
-  return { width, height, cells: Array.from({ length: width * height }, () => "unknown") };
-}
-
-/** Returns a new map updated only from one local observation. */
-export function updateKnownMap(map: KnownMap, observation: Observation): KnownMap {
-  const cells = [...map.cells];
-  setCell(cells, map, observation.robot, "free");
-
-  for (const direction of planningDirectionOrder) {
-    const offset = directionOffsets[direction];
-    const neighbor = { x: observation.robot.x + offset.x, y: observation.robot.y + offset.y };
-    const contents = observation.neighbors[direction];
-    if (contents === "boundary") {
-      continue;
-    }
-    setCell(cells, map, neighbor, contents === "obstacle" ? "blocked" : "free");
-  }
-
-  return { ...map, cells };
-}
-
-/** Gets terrain knowledge for an in-bounds map position. */
-export function getKnownCell(map: KnownMap, position: Position): KnownCell | undefined {
-  return isInBounds(map, position) ? map.cells[toIndex(map, position)] : undefined;
-}
+export const planningDirectionOrder: readonly MovementDirection[] = cardinalDirections;
 
 /**
  * Finds a deterministic shortest route through known-free cells only. Unknown
@@ -153,14 +118,20 @@ export function findReachableFrontiers(map: KnownMap, start: Position): readonly
  * Chooses the agreed hybrid frontier: shortest known-safe distance plus
  * Manhattan distance to the public target. Ties prefer shorter safe paths;
  * information-gain policy then prefers more unknown neighbors before stable
- * top-to-bottom and left-to-right coordinates.
+ * top-to-bottom and left-to-right coordinates. Random policy samples uniformly
+ * from the minimum-score/minimum-distance set, consuming one draw only when
+ * that set contains multiple candidates. Enumeration is row-major.
  */
 export function selectGoalDirectedFrontier(
   map: KnownMap,
   start: Position,
   target: Position,
   tieBreakPolicy: FrontierTieBreakPolicy = "coordinate",
+  random?: () => number,
 ): Frontier | null {
+  if (tieBreakPolicy === "random" && random === undefined) {
+    throw new Error("Random frontier policy requires an injected random function.");
+  }
   const frontiers = findReachableFrontiers(map, start);
   let best: Frontier | null = null;
 
@@ -169,7 +140,16 @@ export function selectGoalDirectedFrontier(
       best = frontier;
     }
   }
-  return best;
+  if (tieBreakPolicy !== "random" || best === null) return best;
+  const bestScore = best.path.length + manhattanDistance(best.position, target);
+  const tied = frontiers.filter((frontier) => frontier.path.length === best.path.length
+    && frontier.path.length + manhattanDistance(frontier.position, target) === bestScore);
+  if (tied.length === 1) return tied[0]!;
+  const draw = random!();
+  if (!Number.isFinite(draw) || draw < 0 || draw >= 1) {
+    throw new Error("Random frontier policy requires random values in [0, 1).");
+  }
+  return tied[Math.floor(draw * tied.length)]!;
 }
 
 /** Scores every reachable frontier using the v1 goal-directed hybrid formula. */
@@ -197,6 +177,7 @@ export class PlanningAgent implements Agent {
   private readonly mission: AgentMission;
   private readonly recordDiagnostics: boolean;
   private readonly tieBreakPolicy: FrontierTieBreakPolicy;
+  private readonly random: (() => number) | undefined;
   private map: KnownMap;
   private latestDecisionDebug: PlanningDecisionDebug | null = null;
 
@@ -210,6 +191,10 @@ export class PlanningAgent implements Agent {
     this.map = createUnknownMap(this.mission.width, this.mission.height);
     this.recordDiagnostics = options.recordDiagnostics ?? false;
     this.tieBreakPolicy = options.tieBreakPolicy ?? "coordinate";
+    this.random = options.random;
+    if (this.tieBreakPolicy === "random" && this.random === undefined) {
+      throw new Error("Random frontier policy requires an injected random function.");
+    }
   }
 
   decide(observation: Observation): AgentDecision {
@@ -220,7 +205,7 @@ export class PlanningAgent implements Agent {
       return this.finishDecision(observation.robot, "target-route", goalPath[0]!, goalPath, null);
     }
 
-    const frontier = selectGoalDirectedFrontier(this.map, observation.robot, this.mission.target, this.tieBreakPolicy);
+    const frontier = selectGoalDirectedFrontier(this.map, observation.robot, this.mission.target, this.tieBreakPolicy, this.random);
     if (frontier !== null && frontier.path.length > 0) {
       return this.finishDecision(observation.robot, "frontier", frontier.path[0]!, frontier.path, frontier);
     }
@@ -343,22 +328,16 @@ function describeDecisionReason(
     ? "No tie required."
     : sameDistance.length === 1
       ? "Equal scores were resolved by shorter known-safe distance."
+      : tieBreakPolicy === "random"
+        ? `Uniform random selection among ${sameDistance.length} equal-score, equal-distance frontiers in row-major order.`
       : tieBreakPolicy === "information-gain" && sameInformationGain.length === 1
         ? "Equal primary scores and known-safe distances were resolved by higher unknown-neighbor information gain."
       : "Equal scores and distances were resolved by stable coordinates: top-to-bottom, then left-to-right.";
   return `Policy ${tieBreakPolicy}. Selected frontier (${selected.position.x}, ${selected.position.y}) with score ${selected.combinedScore} = ${selected.knownSafeDistance} known-safe + ${selected.manhattanDistanceToTarget} Manhattan and ${selected.unknownNeighborCount} unknown neighbors. ${tieBreak}`;
 }
 
-function copyKnownMap(map: KnownMap): KnownMap {
-  return { width: map.width, height: map.height, cells: [...map.cells] };
-}
-
 function hasUnknownNeighbor(map: KnownMap, position: Position): boolean {
   return countUnknownNeighbors(map, position) > 0;
-}
-
-function countUnknownNeighbors(map: KnownMap, position: Position): number {
-  return planningDirectionOrder.filter((direction) => getKnownCell(map, movePosition(position, direction)) === "unknown").length;
 }
 
 function reconstructPath(
@@ -377,25 +356,6 @@ function reconstructPath(
     current = parent.previous;
   }
   return path.reverse();
-}
-
-function setCell(cells: KnownCell[], map: KnownMap, position: Position, value: KnownCell): void {
-  if (isInBounds(map, position)) {
-    cells[toIndex(map, position)] = value;
-  }
-}
-
-function isInBounds(map: KnownMap, position: Position): boolean {
-  return position.x >= 0 && position.x < map.width && position.y >= 0 && position.y < map.height;
-}
-
-function toIndex(map: KnownMap, position: Position): number {
-  return position.y * map.width + position.x;
-}
-
-function movePosition(position: Position, direction: MovementDirection): Position {
-  const offset = directionOffsets[direction];
-  return { x: position.x + offset.x, y: position.y + offset.y };
 }
 
 function manhattanDistance(first: Position, second: Position): number {
