@@ -7,6 +7,9 @@ import { createSeededRandom } from "./random.js";
 import { createReplayHtml } from "./replay.js";
 import { createScenario, scenarioRows, type ScenarioName } from "./scenarios.js";
 import { runSimulationWithTrace } from "./simulation.js";
+import { generateBarrierWorld } from "./structural-generation.js";
+import { generateMazeWorld } from "./maze-generation.js";
+import { generateTrapWorld } from "./trap-generation.js";
 
 type ReplayAgentName = "random" | "valid-random" | "memory" | "rule" | "planning";
 
@@ -16,22 +19,44 @@ interface ReplayOptions {
   readonly seed: number;
   readonly steps: number;
   readonly tieBreakPolicy: FrontierTieBreakPolicy;
+  readonly structural?: "doorway" | "sealed" | "maze" | "trap";
+  readonly width: number;
+  readonly height: number;
+  readonly worldSeed: number;
+  readonly doorRow?: number;
 }
 
 const options = parseOptions(process.argv.slice(2));
-const world = createScenario(options.scenario);
+const maze = options.structural === "maze" ? generateMazeWorld(options) : null;
+const trap = options.structural === "trap" ? generateTrapWorld(options) : null;
+const generated = options.structural === "doorway" || options.structural === "sealed" ? generateBarrierWorld({
+  width: options.width, height: options.height, worldSeed: options.worldSeed,
+  variant: options.structural,
+  ...(options.doorRow === undefined ? {} : { doorRow: options.doorRow }),
+}) : null;
+const world = trap?.world ?? maze?.world ?? generated?.world ?? createScenario(options.scenario);
+const layoutName = trap !== null ? `trap-${options.width}x${options.height}-world-${options.worldSeed}` : maze !== null ? `maze-${options.width}x${options.height}-world-${options.worldSeed}` : generated === null ? options.scenario
+  : `barrier-${options.structural}-${options.width}x${options.height}-world-${options.worldSeed}-door-${generated.doorRow ?? "none"}`;
 const mission = createAgentMission(world);
 const agent = createAgent(options.agent, mission, options.seed, options.tieBreakPolicy);
 const publicMission = options.agent === "rule" || options.agent === "planning" ? { target: mission.target } : null;
 const replay = runSimulationWithTrace(world, agent, options.steps, publicMission);
 const policySegment = options.agent === "planning" ? `-${options.tieBreakPolicy}` : "";
-const filename = `${options.scenario}-${options.agent}${policySegment}-${options.seed}.html`;
+const filename = `${layoutName}-${options.agent}${policySegment}-${options.seed}.html`;
 const outputPath = `replays/${filename}`;
 
 await mkdir("replays", { recursive: true });
-await writeFile(outputPath, createReplayHtml(replay.trace, `WorldForge: ${options.scenario} / ${options.agent}`));
+await writeFile(outputPath, createReplayHtml(replay.trace, `WorldForge: ${layoutName} / ${options.agent}`));
 
 console.log(`Wrote ${outputPath}`);
+if (maze !== null) console.log(`Oracle shortest path: ${maze.shortestPathLength}`);
+if (trap !== null) {
+  console.log(`Geometry: ${JSON.stringify(trap.geometry)}`);
+  console.log(`Oracle shortest path: ${trap.shortestPathLength}; Manhattan: ${trap.manhattanDistance}; detour ratio: ${trap.detourRatio}`);
+}
+if (generated !== null) {
+  console.log(`Oracle shortest path: ${generated.shortestPathLength ?? "unreachable"}; Manhattan: ${generated.manhattanDistance}; detour ratio: ${generated.detourRatio ?? "N/A"}`);
+}
 console.log(`Termination: ${replay.result.termination}; steps: ${replay.result.stepsTaken}; successful: ${replay.result.successfulMoves}; rejected: ${replay.result.rejectedMoves}`);
 console.log(`Open on macOS: open ${outputPath}`);
 
@@ -62,11 +87,27 @@ function parseOptions(argumentsList: readonly string[]): ReplayOptions {
   let seed = 42;
   let steps = 100;
   let tieBreakPolicy: FrontierTieBreakPolicy = "coordinate";
+  let structural: "doorway" | "sealed" | "maze" | "trap" | undefined;
+  let width = 9;
+  let height = 9;
+  let worldSeed = 42;
+  let doorRow: number | undefined;
 
   for (let index = 0; index < argumentsList.length; index += 1) {
     const option = argumentsList[index];
     const value = argumentsList[index + 1];
-    if (option === "--scenario" && value !== undefined) {
+    if (option === "--structural" && value !== undefined) {
+      if (value !== "doorway" && value !== "sealed" && value !== "maze" && value !== "trap") throw new Error("Choose doorway, sealed, maze or trap for --structural.");
+      structural = value;
+      index += 1;
+    } else if (["--width", "--height", "--world-seed", "--door-row"].includes(option ?? "") && value !== undefined) {
+      const parsed = parseIntegerOption(option!, value);
+      if (option === "--width") width = parsed;
+      if (option === "--height") height = parsed;
+      if (option === "--world-seed") worldSeed = parsed;
+      if (option === "--door-row") doorRow = parsed;
+      index += 1;
+    } else if (option === "--scenario" && value !== undefined) {
       if (!(value in scenarioRows)) {
         throw new Error(`Unknown scenario "${value}". Choose one of: ${Object.keys(scenarioRows).join(", ")}.`);
       }
@@ -98,7 +139,17 @@ function parseOptions(argumentsList: readonly string[]): ReplayOptions {
     }
   }
 
-  return { scenario, agent, seed, steps, tieBreakPolicy };
+  if (structural === undefined && (doorRow !== undefined || argumentsList.some((value) => ["--width", "--height", "--world-seed"].includes(value)))) {
+    throw new Error("Structural dimensions, world seed and door row require --structural.");
+  }
+  if (structural !== undefined && argumentsList.includes("--scenario")) {
+    throw new Error("Choose either --scenario or --structural.");
+  }
+  if ((structural === "maze" || structural === "trap") && doorRow !== undefined) throw new Error("Maze and trap generation do not accept --door-row.");
+  return { scenario, agent, seed, steps, tieBreakPolicy, width, height, worldSeed,
+    ...(structural === undefined ? {} : { structural }),
+    ...(doorRow === undefined ? {} : { doorRow }),
+  };
 }
 
 function isReplayAgentName(value: string): value is ReplayAgentName {

@@ -1,5 +1,105 @@
 # WorldForge
 
+## U-shaped trap replays
+
+`generateTrapWorld` in `src/trap-generation.ts` accepts integer `width` and
+`height` of at least 6, a safe integer `worldSeed`, and optional `opening`
+(`up`, `right`, `down`, `left`), `depth`, `span`, and `origin` overrides.
+The seed selects omitted geometry. Depth includes the back wall and entrance
+row and must be at least 4. Span includes both arms and must be at least 3.
+Origin is the top-left of the rotated barrier rectangle. Validation requires
+a free exterior margin of at least one cell on every side.
+
+The barrier consists of a back wall and two arms. Its entrance between the
+arm tips stays open. Start is one cell behind the middle of the closed wall,
+and target is one cell inside it, giving Manhattan distance 2. All remaining
+cells are free. Environment-side BFS validates reachability and supplies the
+shortest-path length and detour ratio. Agents receive the existing public
+mission and local observations. Fixed endpoint placement makes these
+controlled detour tests with deliberately limited layout diversity.
+
+```sh
+npm run replay -- --structural trap --width 15 --height 15 --world-seed 6001 --agent planning --tie-break coordinate --steps 2000
+npm run replay -- --structural trap --width 15 --height 15 --world-seed 6001 --agent planning --tie-break information-gain --steps 2000
+npm run replay -- --structural trap --width 21 --height 21 --world-seed 6002 --agent planning --tie-break coordinate --steps 2000
+npm run replay -- --structural trap --width 21 --height 21 --world-seed 6002 --agent planning --tie-break information-gain --steps 2000
+```
+
+| Size / seed | Opening | Depth / span | Origin | Manhattan | Oracle | Detour ratio | Coordinate actions | Information-gain actions |
+|---|---|---|---|---|---|---|---|---|
+| 15×15 / 6001 | down | 4 / 7 | (5,1) | 2 | 16 | 8 | 40 | 16 |
+| 21×21 / 6002 | right | 17 / 13 | (1,7) | 2 | 48 | 24 | 146 | 48 |
+
+All four runs reach the goal with zero rejected movements. Open their replays
+on macOS with these commands.
+
+```sh
+open replays/trap-15x15-world-6001-planning-coordinate-42.html
+open replays/trap-15x15-world-6001-planning-information-gain-42.html
+open replays/trap-21x21-world-6002-planning-coordinate-42.html
+open replays/trap-21x21-world-6002-planning-information-gain-42.html
+```
+
+## Perfect maze replays
+
+`generateMazeWorld` in `src/maze-generation.ts` accepts odd integer dimensions
+of at least 5 and an integer `worldSeed`. Iterative randomized DFS starts at
+`(1,1)` and carves through intervening walls to unvisited odd-coordinate cells.
+Each new cell joins the existing maze by one corridor, producing a connected
+tree of traversable cells with a solid boundary wall. The existing seeded PRNG
+makes every configuration reproducible.
+
+The robot starts at `(1,1)`. Environment-side BFS chooses the farthest
+traversable target, breaking distance ties by smallest row then smallest column.
+The returned metadata includes the oracle shortest-path length. The replay
+supplies agents with the existing public mission and local observations.
+These DFS mazes favour long winding corridors and reflect that generator's
+layout bias. Dimensions must be odd, and generation allocates memory
+proportional to the grid area.
+
+```sh
+npm run replay -- --structural maze --width 15 --height 15 --world-seed 5001 --agent planning --tie-break information-gain --steps 2000
+npm run replay -- --structural maze --width 21 --height 21 --world-seed 5002 --agent planning --tie-break information-gain --steps 2000
+open replays/maze-15x15-world-5001-planning-information-gain-42.html
+open replays/maze-21x21-world-5002-planning-information-gain-42.html
+```
+
+The 15×15 example has oracle distance 78 and completes in 84 PlanningAgent
+actions. The 21×21 example has oracle distance 146 and completes in 200 actions.
+Both information-gain runs reach the goal with zero rejected moves.
+
+## Structural barrier replays
+
+`generateBarrierWorld` in `src/structural-generation.ts` accepts `width` (at
+least 3), `height` (at least 2), an integer `worldSeed`, a `doorway` or `sealed`
+variant, and an optional zero-based `doorRow` for doorway worlds. The wall is
+at `floor(width / 2)` and spans the full height. Start is `(0,0)` and target is
+`(width - 1,0)`. Every cell away from the wall is traversable. An omitted door
+row is selected by the existing seeded PRNG. The sealed variant rejects an
+explicit door row.
+
+Generation validates reachability using the environment-side BFS oracle and
+returns shortest-path length, Manhattan distance, and their detour ratio.
+Unreachable maps have null shortest-path length and detour ratio. Agents
+receive the existing public mission and local observations. This structural
+family is generated separately from the random-obstacle experiment maps.
+
+Generate the long-detour and sealed demonstrations with these commands.
+
+```sh
+npm run replay -- --structural doorway --width 9 --height 15 --world-seed 42 --door-row 14 --agent planning --steps 2000
+npm run replay -- --structural sealed --width 9 --height 15 --world-seed 42 --agent planning --steps 2000
+open replays/barrier-doorway-9x15-world-42-door-14-planning-coordinate-42.html
+open replays/barrier-sealed-9x15-world-42-door-none-planning-coordinate-42.html
+```
+
+For these examples the doorway oracle distance is 36, Manhattan distance is 8,
+and detour ratio is 4.5. PlanningAgent takes 78 actions to reach the goal. The
+sealed run stops after 59 movements with `target-unreachable`. Both have zero
+rejected moves. This first structural family varies only the doorway row for
+fixed dimensions and endpoints. It provides a controlled detour experiment
+with limited layout diversity.
+
 WorldForge is a long-term TypeScript project for experimenting with autonomous agents in simulated environments. It will grow in small, observable steps: first a world and its rules, then behavior, evaluation, and only later more ambitious agent capabilities.
 
 ## Today: a first autonomous mission
