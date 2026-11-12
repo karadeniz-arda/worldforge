@@ -127,6 +127,13 @@ Detailed traces and diagnostics are opt-in during replay and Experiment 005.
 | `npm run benchmark:validate` | Named-scenario validation with 1,000 stochastic trials. | [Experiment 003](docs/experiment-003.md) |
 | `npm run benchmark:procedural` | Random, valid-random, and memory baselines across map sizes, densities, and budgets. | [Experiment 004](docs/experiment-004.md), [JSON](results/experiment-004.json) |
 | `npm run experiment:005` | MemoryRandomAgent and paired PlanningAgent policies on the same 600 procedural worlds. | [Experiment 005](docs/experiment-005.md), [JSON](results/experiment-005.json) |
+| `npm run experiment:006 -- --full` | Four navigation policies across held-out generated strata and finite structural controls. | [Protocol](docs/experiment-006-protocol.md), [Experiment 006](docs/experiment-006.md), [JSON](results/experiment-006.json) |
+
+Experiment 006 covers 638 case configurations and 635 distinct layouts, with
+five random-control runs per case and budgets of 100, 500, and 1000 actions.
+Its development-only pipeline check is `npm run experiment:006 -- --pilot`.
+The report documents structure-dependent results, duplicate handling,
+world-level paired uncertainty, and oracle checks.
 
 Experiment 005 uses 100 reachable world seeds for each size/density combination,
 with budgets of 100, 500, and 1,000 actions. Each planning policy runs once per
@@ -207,8 +214,7 @@ macOS open commands. A small exploratory policy comparison is available through
 
 ## Roadmap
 
-Planned work includes Experiment 006 for
-structural environment evaluation, warehouse tasks with pickup and delivery,
+Planned work includes warehouse tasks with pickup and delivery,
 and dynamic environments. These capabilities are pending implementation.
 
 ## Documentation links
@@ -218,6 +224,8 @@ and dynamic environments. These capabilities are pending implementation.
 - [Experiment 003 — memory validation](docs/experiment-003.md)
 - [Experiment 004 — memory under scale](docs/experiment-004.md)
 - [Experiment 005 — planning under partial information](docs/experiment-005.md)
+- [Experiment 006 — protocol](docs/experiment-006-protocol.md)
+- [Experiment 006 — evaluation across navigation structures](docs/experiment-006.md)
 - [Planning correctness and termination assumptions](docs/planning-correctness.md)
 - [Optimistic BFS algorithm and development comparison](docs/optimistic-bfs.md)
 - [Doorway decision analysis](docs/doorway-failure-analysis.md)
