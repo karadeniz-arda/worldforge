@@ -13,6 +13,7 @@
     "planning:compare": "tsx src/planning-comparison-cli.ts",
     "experiment:005": "tsx src/experiment-005-cli.ts",
     "experiment:006": "tsx src/experiment-006-cli.ts",
+    "experiment:006d": "tsx src/experiment-006d-cli.ts",
     "benchmark:procedural": "tsx src/procedural-benchmark-cli.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
